@@ -277,33 +277,31 @@ h1 { max-width: 1050px; margin: 0; font: 400 clamp(56px, 8.2vw, 112px)/.91 "Iowa
 .databaseFooter a:hover span, .databaseFooter a:focus-visible span { transform: translate(3px, -3px); }
 .databaseFooter a:focus-visible { outline: 2px solid var(--signal); outline-offset: 5px; }
 
-.atlasFooter { position:relative; display:block; padding:clamp(28px,4vw,56px); color:#dceaf4; background:var(--ink); border-top:4px solid var(--signal); }
+.atlasFooter { position:relative; display:block; padding:clamp(22px,2.5vw,34px); color:#dceaf4; background:var(--ink); border-top:4px solid var(--signal); }
 .atlasFooter a { color:inherit; text-decoration:none; }
 .atlasFooter a:hover { color:white; text-decoration:underline; text-underline-offset:4px; }
 .atlasFooter a:focus-visible, .atlasFooter summary:focus-visible { outline:2px solid var(--signal); outline-offset:4px; }
-.footerTopRow { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:start; gap:48px; }
-.footerLead > p { max-width:430px; margin:20px 0 14px; color:#dceaf4; font:400 clamp(24px,2.4vw,34px)/1.15 "Iowan Old Style", "Palatino Linotype", Palatino, serif; letter-spacing:-.025em; }
-.footerCompanyDefinition { display:block; max-width:430px; color:#b9ccda; font-size:13px; line-height:1.6; }
-.footerGuideNav h2 { margin:8px 0 18px; color:#a6d5ca; font-size:15px; font-weight:600; }
-.footerGuideNav ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 24px; list-style:none; padding:0; margin:0; }
+.footerTopRow { display:grid; grid-template-columns:minmax(220px,.7fr) minmax(0,1.5fr); align-items:center; gap:28px; }
+.footerLead > p { margin:10px 0 0; color:#b9ccda; font-size:13px; line-height:1.5; }
+.footerGuideNav ul { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2px 20px; list-style:none; padding:0; margin:0; }
 .footerGuideNav a { display:inline-block; padding:6px 0; color:#c6d9df; font-size:14px; line-height:1.4; }
-.footerCountrySection { margin-top:36px; padding-top:28px; border-top:1px solid rgba(166,213,202,.25); }
-.footerCountrySection > header { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:26px; }
-.footerCountrySection h2 { margin:0; font:400 clamp(24px,2.5vw,34px)/1.15 "Iowan Old Style", "Palatino Linotype", Palatino, serif; letter-spacing:-.025em; }
+.footerCountrySection { margin-top:22px; padding-top:20px; border-top:1px solid rgba(166,213,202,.25); }
+.footerCountrySection > header { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+.footerCountrySection h2 { margin:0; font:400 clamp(22px,2vw,26px)/1.15 "Iowan Old Style", "Palatino Linotype", Palatino, serif; letter-spacing:-.025em; }
 .footerCountrySection > header p { color:#a6c1be; font-size:13px; margin:0; }
-.footerCountryGrid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); align-items:start; gap:24px; }
+.footerCountryGrid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); align-items:start; gap:20px; }
 .footerCountryGroup { min-width:0; }
-.footerCountryGroup h3 { display:flex; justify-content:space-between; align-items:baseline; gap:6px; min-height:38px; margin:0 0 10px; border-bottom:1px solid rgba(166,213,202,.25); padding-bottom:12px; color:#e1efeb; font-size:15px; line-height:1.4; font-weight:600; }
+.footerCountryGroup h3 { display:flex; justify-content:space-between; align-items:baseline; gap:6px; min-height:30px; margin:0 0 6px; border-bottom:1px solid rgba(166,213,202,.25); padding-bottom:8px; color:#e1efeb; font-size:15px; line-height:1.4; font-weight:600; }
 .footerCountryGroup h3 span { color:#a6c1be; font-size:11px; font-weight:400; }
 .footerCountryGroup ul { list-style:none; padding:0; margin:0; }
-.footerCountryGroup a { display:block; padding:7px 0; color:#c6d9df; font-size:14px; line-height:1.45; overflow-wrap:anywhere; }
+.footerCountryGroup a { display:block; padding:4px 0; color:#c6d9df; font-size:14px; line-height:1.45; overflow-wrap:anywhere; }
 .footerCountryGroup a[aria-current=page] { color:white; text-decoration:underline; text-underline-offset:4px; }
-.footerCountryGroup details { margin-top:10px; }
+.footerCountryGroup details { margin-top:4px; }
 .footerCountryGroup summary { cursor:pointer; padding:8px 0; color:#f1cc70; font-size:13px; line-height:1.4; }
 .footerCountryGroup details ul { padding-top:8px; }
 .footerLessLabel, .footerCountryGroup details[open] .footerMoreLabel { display:none; }
 .footerCountryGroup details[open] .footerLessLabel { display:inline; }
-.footerBase { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px 24px; margin-top:32px; padding-top:22px; border-top:1px solid rgba(166,213,202,.25); color:#a6c1be; font-size:11px; line-height:1.5; }
+.footerBase { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 20px; margin-top:20px; padding-top:14px; border-top:1px solid rgba(166,213,202,.25); color:#a6c1be; font-size:11px; line-height:1.5; }
 
 .breadcrumbs { display: flex; min-height: 36px; align-items: center; gap: 4px; margin: 24px 0; color: #78978f; font: 700 8px/1 Menlo, Monaco, monospace; letter-spacing: .07em; text-transform: uppercase; }
 .breadcrumbs a { color: var(--ocean); text-decoration: none; }
@@ -787,12 +785,14 @@ h1 { max-width: 1050px; margin: 0; font: 400 clamp(56px, 8.2vw, 112px)/.91 "Iowa
 @media(max-width:600px) { .planningHero { padding:22px 16px; } .planningGrid { grid-template-columns:1fr; } .planningGrid section { padding:20px 16px; } .planningHero dl { gap:22px; } }
 
 /* Keep the country navigation readable as the footer narrows. */
-@media(max-width:1200px) { .footerCountryGrid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; } }
+@media(max-width:1200px) { .footerCountryGrid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; } }
 @media(max-width:700px) {
-  .footerTopRow { grid-template-columns:1fr; gap:24px; }
-  .footerCountryGrid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 20px; }
+  .atlasFooter { padding:24px 20px; }
+  .footerTopRow { grid-template-columns:1fr; gap:14px; }
+  .footerGuideNav ul { grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 14px; }
+  .footerCountryGrid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 18px; }
   .footerGuideNav a, .footerCountryGroup a { display:flex; align-items:center; min-height:44px; }
   .footerCountryGroup summary { min-height:44px; padding:12px 0; }
-  .footerCountrySection > header { display:block; }
-  .footerCountrySection > header p { margin-top:12px; line-height:1.5; }
+  .footerCountrySection > header p { font-size:12px; }
+  .footerBase { gap:6px; }
 }

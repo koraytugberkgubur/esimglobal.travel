@@ -78,11 +78,10 @@ export function SiteFooter({ region, country }) {
       <div className="footerTopRow">
         <div className="footerLead">
           <a href={sitePath("/")} aria-label="eSIM Global Travel home"><BrandLogo inverted /></a>
-          <p>Travel eSIM research, by destination.</p>
-          <small className="footerCompanyDefinition">Independent guides from Istanbul. Compare coverage, data and provider terms before you travel.</small>
+          <p>Independent travel eSIM guides.</p>
         </div>
         <nav className="footerGuideNav" aria-labelledby="footer-explore-title">
-          <h2 id="footer-explore-title">Plan your connection</h2>
+          <h2 id="footer-explore-title" className="srOnly">Plan your connection</h2>
           <ul>
             <li><a href={sitePath("/#compare")}>Compare on the map</a></li>
             <li><a href={sitePath("/what-is-a-travel-esim/")}>What is a travel eSIM?</a></li>
@@ -94,12 +93,12 @@ export function SiteFooter({ region, country }) {
         </nav>
       </div>
       <section className="footerCountrySection" aria-labelledby="footer-countries-title">
-        <header><h2 id="footer-countries-title">Country eSIM guides</h2><p>{footerDestinations.length} destinations, organized by continent</p></header>
+        <header><h2 id="footer-countries-title">Country eSIM guides</h2><p>{footerDestinations.length} destinations</p></header>
         <div className="footerCountryGrid">
           {regions.map((name) => {
             const destinations = footerDestinations.filter((item) => item.region === name);
-            const featured = featuredFooterSlugs[name].map((slug) => destinations.find((item) => item.slug === slug)).filter(Boolean);
-            const remaining = destinations.filter((item) => !featuredFooterSlugs[name].includes(item.slug)).sort((a, b) => a.name.localeCompare(b.name));
+            const featured = featuredFooterSlugs[name].slice(0, 4).map((slug) => destinations.find((item) => item.slug === slug)).filter(Boolean);
+            const remaining = destinations.filter((item) => !featured.some((entry) => entry.slug === item.slug)).sort((a, b) => a.name.localeCompare(b.name));
             const headingId = `footer-region-${continentCodes[name].toLowerCase()}`;
             return <nav className="footerCountryGroup" key={name} aria-labelledby={headingId}>
               <h3 id={headingId}>{name}<span>{destinations.length}</span></h3>
