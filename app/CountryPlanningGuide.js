@@ -1,7 +1,7 @@
 import { regionalChecks } from "./regionalChecks";
 import { SiteHeader, SiteFooter, CountryBreadcrumbs } from "./SiteChrome";
 import { destinationIdentity } from "./destinationIdentity";
-import { destinationRegistry, continentSlug } from "./countryRegistry";
+import { destinationRegistry } from "./countryRegistry";
 import { sitePath, siteUrl } from "./sitePath";
 
 
@@ -15,7 +15,7 @@ export default function CountryPlanningGuide({ destination }) {
     { "@type": "WebPage", "@id": `${siteUrl(`/${slug}/`)}#webpage`, url: siteUrl(`/${slug}/`), name: `${name} eSIM travel guide`, description: `Coverage, compatibility and setup checks for mobile data in ${name}.`, dateModified: destination.updated, inLanguage: "en", isPartOf: { "@id": `${siteUrl("/")}#website` }, breadcrumb: { "@id": `${siteUrl(`/${slug}/`)}#breadcrumb` } },
     { "@type": "BreadcrumbList", "@id": `${siteUrl(`/${slug}/`)}#breadcrumb`, itemListElement: [
       { "@type": "ListItem", position: 1, name: "Global eSIMs", item: siteUrl("/") },
-      { "@type": "ListItem", position: 2, name: region, item: siteUrl(`/#map-${continentSlug(region)}`) },
+      { "@type": "ListItem", position: 2, name: region, item: siteUrl("/#compare") },
       { "@type": "ListItem", position: 3, name, item: siteUrl(`/${slug}/`) },
     ] },
   ] };
@@ -47,7 +47,7 @@ export default function CountryPlanningGuide({ destination }) {
         <details><summary>What should I do if the eSIM will not connect?</summary><p>Check your selected data line, remaining allowance, validity, APN and roaming settings against the provider’s instructions. Contact support over Wi-Fi and keep the error message. Avoid deleting the eSIM unless support confirms it can be reinstalled.</p></details>
         <details><summary>Can the same plan cover another country in {region}?</summary><p>Only if that country is explicitly included in the plan’s coverage. Check every stop before purchase and confirm whether one validity period and data allowance apply across all destinations.</p></details>
       </section>
-      <section className="planningSources"><h2>Continue planning in {region}</h2><nav aria-label="Related destination guides">{related.map((item) => <a href={sitePath(`/${item.slug}/`)} key={item.code}>{item.name}</a>)}<a href={sitePath(`/#map-${continentSlug(region)}`)}>All {region} destinations</a></nav></section>
+      <section className="planningSources"><h2>Continue planning in {region}</h2><nav aria-label="Related destination guides">{related.map((item) => <a href={sitePath(`/${item.slug}/`)} key={item.code}>{item.name}</a>)}<a href={sitePath("/#compare")}>Explore the map</a></nav></section>
       <p className="planningSourceNote">Guide added <time dateTime={destination.updated}>September 17, 2026</time>. Destination names and dialing prefixes: <a href="https://github.com/annexare/Countries">Countries dataset</a>. Geographic grouping: <a href="https://unstats.un.org/unsd/methodology/m49/">UN M49</a>. Setup guidance is a checklist; your provider’s instructions take precedence.</p>
     </article></main><SiteFooter region={region} country={name} />
   </div>;

@@ -18,7 +18,7 @@ const base = urls[0];
 assert.ok(base.endsWith('/'), 'Sitemap begins with the canonical homepage');
 const home = readFileSync('out/index.html', 'utf8');
 assert.ok(!home.includes('class="destinationDirectory"'), 'No standalone country directory');
-assert.ok(home.includes('Browse destination guides'), 'The map contains the destination browser');
+assert.ok(!home.includes('integratedMap'), 'Original homepage map restored');
 const basePath = new URL(base).pathname.replace(/\/$/, '');
 let planningPages = 0;
 let localLinksChecked = 0;
@@ -27,7 +27,6 @@ for (const destination of destinationRegistry) {
   assert.ok(urls.includes(url), `Missing sitemap URL: ${url}`);
   const file = `out/${destination.slug}/index.html`;
   assert.ok(existsSync(file), `Missing export: ${file}`);
-  assert.ok(home.includes(`href="${basePath}/${destination.slug}/"`), `Homepage must link ${destination.slug}`);
   const html = readFileSync(file, 'utf8');
   assert.ok(html.includes(`<link rel="canonical" href="${url}"`), `Canonical mismatch: ${file}`);
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, `One main heading: ${file}`);
