@@ -1,16 +1,10 @@
+import { regionalChecks } from "./regionalChecks";
 import { SiteHeader, SiteFooter, CountryBreadcrumbs } from "./SiteChrome";
 import { destinationIdentity } from "./destinationIdentity";
 import { destinationRegistry, continentSlug } from "./countryRegistry";
 import { sitePath, siteUrl } from "./sitePath";
 
-const regionalChecks = {
-  Europe: ["Check each border crossing", "A plan called Europe does not necessarily cover every European destination. List each stop and transit country, then compare that list with the provider’s named coverage. Do not infer inclusion from EU or Schengen membership."],
-  Asia: ["Check the exact destination listing", "An Asia or APAC bundle can cover a different set of destinations from another provider’s bundle. Confirm every country on your itinerary, including stopovers where you expect to use mobile data."],
-  Africa: ["Check the full route", "For a journey between cities, lodges or rural destinations, ask which local operator the plan uses and check that operator’s coverage along your route. Keep booking details and navigation available offline."],
-  "North America": ["Check mainland and island stops separately", "A North America label does not establish coverage in every Central American or Caribbean destination. Check the country list and, on a cruise, confirm onboard connectivity separately from coverage in port."],
-  "South America": ["Plan for the journey between stops", "List your border crossings as well as your main destination. Ask about the partner network for each country and check the route between cities; a capital-city connection does not establish coverage on a remote journey."],
-  Oceania: ["Check every island destination", "An Oceania bundle may cover only a selection of destinations. Confirm each island group by name and ask your accommodation or tour operator about connectivity at your actual stops. Shore coverage is separate from connectivity at sea."],
-};
+
 
 export default function CountryPlanningGuide({ destination }) {
   const { name, slug, region, flag, code, phone } = destination;
@@ -21,7 +15,7 @@ export default function CountryPlanningGuide({ destination }) {
     { "@type": "WebPage", "@id": `${siteUrl(`/${slug}/`)}#webpage`, url: siteUrl(`/${slug}/`), name: `${name} eSIM travel guide`, description: `Coverage, compatibility and setup checks for mobile data in ${name}.`, dateModified: destination.updated, inLanguage: "en", isPartOf: { "@id": `${siteUrl("/")}#website` }, breadcrumb: { "@id": `${siteUrl(`/${slug}/`)}#breadcrumb` } },
     { "@type": "BreadcrumbList", "@id": `${siteUrl(`/${slug}/`)}#breadcrumb`, itemListElement: [
       { "@type": "ListItem", position: 1, name: "Global eSIMs", item: siteUrl("/") },
-      { "@type": "ListItem", position: 2, name: region, item: siteUrl(`/#destinations-${continentSlug(region)}`) },
+      { "@type": "ListItem", position: 2, name: region, item: siteUrl(`/#map-${continentSlug(region)}`) },
       { "@type": "ListItem", position: 3, name, item: siteUrl(`/${slug}/`) },
     ] },
   ] };
@@ -53,7 +47,7 @@ export default function CountryPlanningGuide({ destination }) {
         <details><summary>What should I do if the eSIM will not connect?</summary><p>Check your selected data line, remaining allowance, validity, APN and roaming settings against the provider’s instructions. Contact support over Wi-Fi and keep the error message. Avoid deleting the eSIM unless support confirms it can be reinstalled.</p></details>
         <details><summary>Can the same plan cover another country in {region}?</summary><p>Only if that country is explicitly included in the plan’s coverage. Check every stop before purchase and confirm whether one validity period and data allowance apply across all destinations.</p></details>
       </section>
-      <section className="planningSources"><h2>Continue planning in {region}</h2><nav aria-label="Related destination guides">{related.map((item) => <a href={sitePath(`/${item.slug}/`)} key={item.code}>{item.name}</a>)}<a href={sitePath(`/#destinations-${continentSlug(region)}`)}>All {region} destinations</a></nav></section>
+      <section className="planningSources"><h2>Continue planning in {region}</h2><nav aria-label="Related destination guides">{related.map((item) => <a href={sitePath(`/${item.slug}/`)} key={item.code}>{item.name}</a>)}<a href={sitePath(`/#map-${continentSlug(region)}`)}>All {region} destinations</a></nav></section>
       <p className="planningSourceNote">Guide added <time dateTime={destination.updated}>September 17, 2026</time>. Destination names and dialing prefixes: <a href="https://github.com/annexare/Countries">Countries dataset</a>. Geographic grouping: <a href="https://unstats.un.org/unsd/methodology/m49/">UN M49</a>. Setup guidance is a checklist; your provider’s instructions take precedence.</p>
     </article></main><SiteFooter region={region} country={name} />
   </div>;

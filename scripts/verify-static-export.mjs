@@ -17,6 +17,8 @@ assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap entries');
 const base = urls[0];
 assert.ok(base.endsWith('/'), 'Sitemap begins with the canonical homepage');
 const home = readFileSync('out/index.html', 'utf8');
+assert.ok(!home.includes('class="destinationDirectory"'), 'No standalone country directory');
+assert.ok(home.includes('Browse destination guides'), 'The map contains the destination browser');
 const basePath = new URL(base).pathname.replace(/\/$/, '');
 let planningPages = 0;
 let localLinksChecked = 0;

@@ -2,11 +2,13 @@
 
 import { HeadingReadMore, HeadingSignal } from "./EditorialHeading";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { sitePath } from "./sitePath";
 import world from "@svg-maps/world";
 import { continents } from "countries-list";
-import { destinationRegistry, destinationByCode } from "./countryRegistry";
+import { destinationRegistry, destinationByCode, continentSlug } from "./countryRegistry";
+
+import { regionalChecks } from "./regionalChecks";
 
 const regionOrder = ["NA", "SA", "EU", "AF", "AS", "OC"];
 const regionLabels = continents;
@@ -47,7 +49,7 @@ const mapCountries = world.locations
   })
   .filter((country) => country && country.continent !== "AN");
 
-export default function WorldMap() {
+export default function WorldMap({ guideSummaries = {} }) {
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [search, setSearch] = useState("");
@@ -55,11 +57,10 @@ export default function WorldMap() {
   const [hoveredOffer, setHoveredOffer] = useState(null);
 
   const visibleCountries = useMemo(() => {
-    if (!selectedRegion) return [];
-    const query = search.trim().toLowerCase();
+    const query = search.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     return destinationRegistry
-      .filter((country) => country.continent === selectedRegion)
-      .filter((country) => !query || country.name.toLowerCase().includes(query))
+      .filter((country) => query || !selectedRegion || country.continent === selectedRegion)
+      .filter((country) => !query || `${country.name} ${country.slug} ${country.code}`.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(query))
       .sort((a, b) => {
         if (selectedCountry?.code === a.code) return -1;
         if (selectedCountry?.code === b.code) return 1;
@@ -72,7 +73,33 @@ export default function WorldMap() {
     [selectedCountry, selectedRegion],
   );
 
+  function setMapHash(hash) {
+    if (window.location.hash !== `#${hash}`) window.history.pushState(null, "", `#${hash}`);
+  }
+
+  useEffect(() => {
+    function restoreMapLocation() {
+      const hash = window.location.hash.slice(1);
+      const country = destinationRegistry.find((item) => hash === `map-country-${item.slug}`);
+      const region = regionOrder.find((key) => [
+        `map-${continentSlug(regionLabels[key])}`,
+        `destinations-${continentSlug(regionLabels[key])}`,
+      ].includes(hash));
+      if (!country && !region && !["", "compare", "destinations"].includes(hash)) return;
+      setSelectedRegion(country?.continent || region || null);
+      setSelectedCountry(country || null);
+      setSelectedOffer(!country && region ? brandOffers[region][0] : null);
+      setHoveredOffer(null);
+      setSearch("");
+      if (hash) requestAnimationFrame(() => document.getElementById("compare")?.scrollIntoView({ block: "start" }));
+    }
+    restoreMapLocation();
+    window.addEventListener("hashchange", restoreMapLocation);
+    return () => window.removeEventListener("hashchange", restoreMapLocation);
+  }, []);
+
   function chooseRegion(region) {
+    setMapHash(region ? `map-${continentSlug(regionLabels[region])}` : "compare");
     setSelectedRegion(region);
     setSelectedCountry(null);
     setSearch("");
@@ -81,11 +108,13 @@ export default function WorldMap() {
   }
 
   function chooseCountry(country) {
+    setMapHash(`map-country-${country.slug}`);
     setSelectedOffer(rankOffers(country.continent, country)[0] || null);
     setSelectedRegion(country.continent);
     setSelectedCountry(country);
     setSearch("");
     setHoveredOffer(null);
+    requestAnimationFrame(() => document.getElementById("map-country-guide")?.scrollIntoView({ block: "nearest" }));
   }
 
   function comparisonCopy(offer) {
@@ -124,7 +153,7 @@ export default function WorldMap() {
             {selectedRegion ? regionLabels[selectedRegion] : "Where will you use mobile data?"}
           </h2>
           {selectedCountry && <h3 className="selectedCountryHeading">{selectedCountry.name}</h3>}
-          <HeadingReadMore href="#map-workspace" label="Open the index">Choose a continent, search every country guide, and check the exact plan’s destination coverage.</HeadingReadMore>
+          <HeadingReadMore href="#map-workspace" label="Open the index">Select a country on the map or search by name to read its connection guide.</HeadingReadMore>
         </div>
         <p className="coverageCount">
           <strong>{destinationRegistry.length}</strong>
@@ -154,7 +183,7 @@ export default function WorldMap() {
         ))}
       </div>
 
-      <div className={`mapWorkspace ${selectedRegion ? "isExploring" : ""}`} id="map-workspace">
+      <div className={`mapWorkspace isExploring integratedMap ${selectedCountry ? "hasCountry" : ""} ${!selectedRegion ? "isWorld" : ""}`} id="map-workspace">
         <div className="mapCanvas">
           {selectedRegion && !selectedCountry && (
             <section className="mapPlanOverlay" aria-labelledby="regional-options-title">
@@ -192,7 +221,7 @@ export default function WorldMap() {
             className="countryMap"
             viewBox={selectedRegion ? regionViewBoxes[selectedRegion] : world.viewBox}
             preserveAspectRatio="xMidYMid meet"
-            role="img"
+            role="group"
             aria-label="Interactive world map. Select a country or choose a continent above."
           >
             <g>
@@ -218,6 +247,7 @@ export default function WorldMap() {
               })}
             </g>
           </svg>
+          {selectedCountry && <MapCountryGuide key={selectedCountry.code} country={selectedCountry} guide={guideSummaries[selectedCountry.slug]} />}
           {selectedOffer && (
             <article
               className="mapPlanPassport"
@@ -250,86 +280,47 @@ export default function WorldMap() {
             <span><i className="legendSelected" /> Selected</span>
           </div>
           {!selectedRegion && (
-            <p className="mapInstruction">Choose a continent above or select any country on the map.</p>
+            <p className="mapInstruction">Click a country to read its guide.</p>
           )}
         </div>
 
-        {selectedRegion && (
-          <aside className={`countryManifest ${selectedCountry ? "hasSelection" : ""}`} aria-live="polite">
-            <div className="manifestHeader">
-              <div>
-                <p className="finderStep">Destination manifest</p>
-                <h3>{regionLabels[selectedRegion]}</h3>
-              </div>
-              <span>{visibleCountries.length}</span>
-            </div>
-
-            {!selectedCountry && <section className="manifestPlans" aria-labelledby="manifest-plans-title">
-              <h4 className="srOnly" id="manifest-plans-title">Regional eSIM plan options</h4>
-              <ul>
-              {rankedOffers.map((offer) => (
-                <li key={offer.brand}><button
-                  type="button"
-                  className={selectedOffer?.brand === offer.brand ? "selected" : ""}
-                  style={{ "--brand-color": offer.color }}
-                  onClick={() => setSelectedOffer(offer)}
-                  onMouseEnter={() => setHoveredOffer(offer)}
-                  onMouseLeave={() => setHoveredOffer(null)}
-                  onFocus={() => setHoveredOffer(offer)}
-                  onBlur={() => setHoveredOffer(null)}
-                  aria-pressed={selectedOffer?.brand === offer.brand}
-                >
-                  <span><strong><i />{offer.brand}</strong><small>{offer.product} · {offer.data} / {offer.days}d</small></span>
-                  <b>${offer.price.toFixed(2)}</b>
-                </button></li>
-              ))}
-              {!rankedOffers.length && <li className="noOffers">No comparable consumer offers</li>}
-              </ul>
-              <p>{selectedRegion === "EU" ? "Verified provider pricing" : "Marketplace preview · verify before purchase"}</p>
-            </section>}
-
-            <label className="countrySearch">
-              <span className="srOnly">Search countries in {regionLabels[selectedRegion]}</span>
-              <input
-                type="search"
-                placeholder="Search countries"
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-              />
-              <span aria-hidden="true">⌕</span>
-            </label>
-
-            <div className="countryList" role="group" aria-label={`Countries in ${regionLabels[selectedRegion]}`}>
-              {visibleCountries.map((country) => (
-                <button
-                  key={country.code}
-                  type="button"
-                  className={selectedCountry?.code === country.code ? "selected" : ""}
-                  onClick={() => chooseCountry(country)}
-                  aria-pressed={selectedCountry?.code === country.code}
-                >
-                  <span className="countryCode">{country.code}</span>
-                  <span>{country.name}</span>
-                  <span className="countryPrice">Open guide</span>
-                  <span className="countryArrow" aria-hidden="true">
-                    {selectedCountry?.code === country.code ? "✓" : "⌁"}
-                  </span>
-                </button>
-              ))}
-              {!visibleCountries.length && <p className="noCountries">No matching destination.</p>}
-            </div>
-
-            {selectedCountry && (
-              <div className="countryTicket">
-                <span>Selected destination</span>
-                <strong>{selectedCountry.name}</strong>
-                <small>Review destination-specific coverage and availability before purchasing.</small>
-                <a href={sitePath(`/${selectedCountry.slug}/`)}>Open the {selectedCountry.name} guide <b aria-hidden="true">⌁</b></a>
-              </div>
-            )}
-          </aside>
-        )}
+        <aside className="countryManifest mapBrowser" aria-label="Browse destination guides">
+          <div className="manifestHeader">
+            <div><p className="finderStep">Explore the map</p><h3>{search ? "Search results" : selectedRegion ? regionLabels[selectedRegion] : "All destinations"}</h3></div>
+            <span aria-live="polite">{visibleCountries.length}</span>
+          </div>
+          <label className="countrySearch">
+            <span className="srOnly">Search destinations</span>
+            <input type="search" placeholder="Country name or code" value={search} onChange={(event) => setSearch(event.target.value)} />
+            <span aria-hidden="true">⌕</span>
+          </label>
+          <p className="mapBrowserHint">Select a country for its guide. Search covers all {destinationRegistry.length} destinations.</p>
+          <div className="countryList" role="group" aria-label="Destination results">
+            {visibleCountries.map((country) => <div key={country.code} className={`mapDestinationRow ${selectedCountry?.code === country.code ? "selected" : ""}`}>
+              <button type="button" onClick={() => chooseCountry(country)} aria-pressed={selectedCountry?.code === country.code} aria-controls="map-country-guide" aria-label={`Preview ${country.name} guide`}>
+                <span className="countryCode">{country.code}</span><span>{country.name}</span><span className="countryArrow" aria-hidden="true">{selectedCountry?.code === country.code ? "✓" : "→"}</span>
+              </button>
+              <a href={sitePath(`/${country.slug}/`)} aria-label={`Read full ${country.name} guide`} title={`Read full ${country.name} guide`}>↗</a>
+            </div>)}
+            {!visibleCountries.length && <p className="noCountries">No matching destination. Try a country name or two-letter code.</p>}
+          </div>
+          <p className="mapBrowserFootnote">Small countries and islands are searchable even when they are too small to select on the map.</p>
+        </aside>
       </div>
     </section>
   );
+}
+
+
+function MapCountryGuide({ country, guide }) {
+  const [regionalTitle, regionalAdvice] = regionalChecks[country.region];
+  return <article className="mapCountryGuide" id="map-country-guide" aria-labelledby="map-guide-title">
+    <header><div><span className="mapGuideRegion">{country.region} · {country.code}</span><h3 id="map-guide-title"><span aria-hidden="true">{country.flag}</span> {country.name}</h3></div><a className="mapGuideLink" href={sitePath(`/${country.slug}/`)}>Read full guide ↗</a></header>
+    <p>{guide?.summary || `Prepare your mobile-data setup for ${country.name}: confirm a supported plan, check your phone, and decide how you will connect on arrival.`}</p>
+    {guide?.offer ? <div className="mapGuideOffer"><strong>{guide.offer.brand} · {guide.offer.dataLabel} · {guide.offer.daysLabel}</strong><span>${guide.offer.price.toFixed(2)}</span><small>Published offer checked {guide.sourceChecked}. Verify current terms before buying.</small></div> : <p className="mapGuideAvailability">Current offers for {country.name} have not yet been verified. Confirm destination availability with the provider.</p>}
+    <details><summary>Networks and coverage</summary><p>{guide?.networks || `Ask the provider which local network its ${country.name} plan uses, then check coverage at your arrival point and overnight stops.`}</p>{guide?.coverage && <p>{guide.coverage}</p>}</details>
+    <details><summary>Installation and arrival</summary><p>Check that your exact phone model supports eSIM and is unlocked. Read the activation rule before installing: validity may start at purchase, installation or first network connection. Save the setup instructions offline and follow the provider’s data-line, roaming and APN guidance on arrival.</p></details>
+    <details><summary>{regionalTitle}</summary><p>{regionalAdvice}</p></details>
+    <footer><span>Calling prefix {country.phone.map((number) => `+${number}`).join(" / ")}</span><a href={sitePath(`/${country.slug}/`)}>All {country.name} advice and FAQs</a></footer>
+  </article>;
 }

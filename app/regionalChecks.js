@@ -1,0 +1,8 @@
+export const regionalChecks = {
+  Europe: ["Check each border crossing", "A plan called Europe does not necessarily cover every European destination. List each stop and transit country, then compare that list with the provider’s named coverage. Do not infer inclusion from EU or Schengen membership."],
+  Asia: ["Check the exact destination listing", "An Asia or APAC bundle can cover a different set of destinations from another provider’s bundle. Confirm every country on your itinerary, including stopovers where you expect to use mobile data."],
+  Africa: ["Check the full route", "For a journey between cities, lodges or rural destinations, ask which local operator the plan uses and check that operator’s coverage along your route. Keep booking details and navigation available offline."],
+  "North America": ["Check mainland and island stops separately", "A North America label does not establish coverage in every Central American or Caribbean destination. Check the country list and, on a cruise, confirm onboard connectivity separately from coverage in port."],
+  "South America": ["Plan for the journey between stops", "List your border crossings as well as your main destination. Ask about the partner network for each country and check the route between cities; a capital-city connection does not establish coverage on a remote journey."],
+  Oceania: ["Check every island destination", "An Oceania bundle may cover only a selection of destinations. Confirm each island group by name and ask your accommodation or tour operator about connectivity at your actual stops. Shore coverage is separate from connectivity at sea."],
+};
