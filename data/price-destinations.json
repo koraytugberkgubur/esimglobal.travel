@@ -1,0 +1,307 @@
+[
+  {
+    "slug": "france",
+    "code": "FR",
+    "name": "France"
+  },
+  {
+    "slug": "italy",
+    "name": "Italy",
+    "code": "IT"
+  },
+  {
+    "slug": "spain",
+    "name": "Spain",
+    "code": "ES"
+  },
+  {
+    "slug": "germany",
+    "name": "Germany",
+    "code": "DE"
+  },
+  {
+    "slug": "united-kingdom",
+    "name": "United Kingdom",
+    "code": "GB"
+  },
+  {
+    "slug": "portugal",
+    "name": "Portugal",
+    "code": "PT"
+  },
+  {
+    "slug": "greece",
+    "name": "Greece",
+    "code": "GR"
+  },
+  {
+    "slug": "netherlands",
+    "name": "Netherlands",
+    "code": "NL"
+  },
+  {
+    "slug": "switzerland",
+    "name": "Switzerland",
+    "code": "CH"
+  },
+  {
+    "slug": "austria",
+    "name": "Austria",
+    "code": "AT"
+  },
+  {
+    "slug": "japan",
+    "name": "Japan",
+    "code": "JP"
+  },
+  {
+    "slug": "china",
+    "name": "China",
+    "code": "CN"
+  },
+  {
+    "slug": "india",
+    "name": "India",
+    "code": "IN"
+  },
+  {
+    "slug": "thailand",
+    "name": "Thailand",
+    "code": "TH"
+  },
+  {
+    "slug": "indonesia",
+    "name": "Indonesia",
+    "code": "ID"
+  },
+  {
+    "slug": "vietnam",
+    "name": "Vietnam",
+    "code": "VN"
+  },
+  {
+    "slug": "south-korea",
+    "name": "South Korea",
+    "code": "KR"
+  },
+  {
+    "slug": "singapore",
+    "name": "Singapore",
+    "code": "SG"
+  },
+  {
+    "slug": "malaysia",
+    "name": "Malaysia",
+    "code": "MY"
+  },
+  {
+    "slug": "united-arab-emirates",
+    "name": "United Arab Emirates",
+    "code": "AE"
+  },
+  {
+    "slug": "turkey",
+    "name": "Türkiye",
+    "code": "TR"
+  },
+  {
+    "slug": "egypt",
+    "name": "Egypt",
+    "code": "EG"
+  },
+  {
+    "slug": "morocco",
+    "name": "Morocco",
+    "code": "MA"
+  },
+  {
+    "slug": "south-africa",
+    "name": "South Africa",
+    "code": "ZA"
+  },
+  {
+    "slug": "ghana",
+    "name": "Ghana",
+    "code": "GH"
+  },
+  {
+    "slug": "nigeria",
+    "name": "Nigeria",
+    "code": "NG"
+  },
+  {
+    "slug": "algeria",
+    "name": "Algeria",
+    "code": "DZ"
+  },
+  {
+    "slug": "tanzania",
+    "name": "Tanzania",
+    "code": "TZ"
+  },
+  {
+    "slug": "rwanda",
+    "name": "Rwanda",
+    "code": "RW"
+  },
+  {
+    "slug": "mauritius",
+    "name": "Mauritius",
+    "code": "MU"
+  },
+  {
+    "slug": "mozambique",
+    "name": "Mozambique",
+    "code": "MZ"
+  },
+  {
+    "slug": "united-states",
+    "name": "United States",
+    "code": "US"
+  },
+  {
+    "slug": "canada",
+    "name": "Canada",
+    "code": "CA"
+  },
+  {
+    "slug": "mexico",
+    "name": "Mexico",
+    "code": "MX"
+  },
+  {
+    "slug": "costa-rica",
+    "name": "Costa Rica",
+    "code": "CR"
+  },
+  {
+    "slug": "panama",
+    "name": "Panama",
+    "code": "PA"
+  },
+  {
+    "slug": "guatemala",
+    "name": "Guatemala",
+    "code": "GT"
+  },
+  {
+    "slug": "dominican-republic",
+    "name": "Dominican Republic",
+    "code": "DO"
+  },
+  {
+    "slug": "jamaica",
+    "name": "Jamaica",
+    "code": "JM"
+  },
+  {
+    "slug": "el-salvador",
+    "name": "El Salvador",
+    "code": "SV"
+  },
+  {
+    "slug": "honduras",
+    "name": "Honduras",
+    "code": "HN"
+  },
+  {
+    "slug": "brazil",
+    "name": "Brazil",
+    "code": "BR"
+  },
+  {
+    "slug": "argentina",
+    "name": "Argentina",
+    "code": "AR"
+  },
+  {
+    "slug": "chile",
+    "name": "Chile",
+    "code": "CL"
+  },
+  {
+    "slug": "colombia",
+    "name": "Colombia",
+    "code": "CO"
+  },
+  {
+    "slug": "peru",
+    "name": "Peru",
+    "code": "PE"
+  },
+  {
+    "slug": "uruguay",
+    "name": "Uruguay",
+    "code": "UY"
+  },
+  {
+    "slug": "ecuador",
+    "name": "Ecuador",
+    "code": "EC"
+  },
+  {
+    "slug": "bolivia",
+    "name": "Bolivia",
+    "code": "BO"
+  },
+  {
+    "slug": "paraguay",
+    "name": "Paraguay",
+    "code": "PY"
+  },
+  {
+    "slug": "guyana",
+    "name": "Guyana",
+    "code": "GY"
+  },
+  {
+    "slug": "australia",
+    "name": "Australia",
+    "code": "AU"
+  },
+  {
+    "slug": "new-zealand",
+    "name": "New Zealand",
+    "code": "NZ"
+  },
+  {
+    "slug": "fiji",
+    "name": "Fiji",
+    "code": "FJ"
+  },
+  {
+    "slug": "papua-new-guinea",
+    "name": "Papua New Guinea",
+    "code": "PG"
+  },
+  {
+    "slug": "tonga",
+    "name": "Tonga",
+    "code": "TO"
+  },
+  {
+    "slug": "nauru",
+    "name": "Nauru",
+    "code": "NR"
+  },
+  {
+    "slug": "samoa",
+    "name": "Samoa",
+    "code": "WS"
+  },
+  {
+    "slug": "guam",
+    "name": "Guam",
+    "code": "GU"
+  },
+  {
+    "slug": "french-polynesia",
+    "name": "French Polynesia",
+    "code": "PF"
+  },
+  {
+    "slug": "northern-mariana-islands",
+    "name": "Northern Mariana Islands",
+    "code": "MP"
+  }
+]
