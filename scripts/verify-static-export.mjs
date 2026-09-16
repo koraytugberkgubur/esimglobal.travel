@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { destinationRegistry, countryCodesByContinent } from '../app/countryRegistry.js';
+import { countryCoordinates } from '../app/countryCoordinates.js';
 
 const codes = Object.values(countryCodesByContinent).flat();
 assert.equal(codes.length, 195, 'UN country baseline');
@@ -20,6 +21,27 @@ const home = readFileSync('out/index.html', 'utf8');
 assert.ok(!home.includes('class="destinationDirectory"'), 'No standalone country directory');
 assert.ok(!home.includes('integratedMap'), 'Original homepage map restored');
 const basePath = new URL(base).pathname.replace(/\/$/, '');
+function verifyFooter(html, slug) {
+  const footer = html.match(/<footer class="atlasFooter"[\s\S]*?<\/footer>/)?.[0];
+  assert.ok(footer, `Missing footer: ${slug}`);
+  assert.ok(!footer.includes('<details'), `No expanded destination directory: ${slug}`);
+  const navigation = footer.match(/<nav class="footerCountrySection"[\s\S]*?<\/nav>/)?.[0] || '';
+  const links = [...navigation.matchAll(/href="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(links.length, 6, `Six country links in footer: ${slug}`);
+  assert.equal(new Set(links).size, 6, `Unique country links in footer: ${slug}`);
+  assert.ok(!links.includes(`${basePath}/${slug}/`), `Footer must not link to current country: ${slug}`);
+  assert.ok((footer.match(/<a\s/g) || []).length <= 13, `Footer link budget: ${slug}`);
+  for (const href of links) assert.ok(existsSync(`out${href.slice(basePath.length)}index.html`), `Broken footer link: ${href}`);
+  return links;
+}
+const featured = verifyFooter(home, 'home');
+assert.deepEqual(featured, ['france', 'japan', 'south-africa', 'united-states', 'brazil', 'australia'].map(slug => `${basePath}/${slug}/`));
+const nearbyExamples = {
+  france: ['germany', 'italy', 'spain', 'belgium', 'switzerland', 'united-kingdom'],
+  kenya: ['uganda', 'tanzania'],
+  fiji: ['samoa'], // Across the international date line.
+  egypt: ['israel'], // Across the site's continent grouping.
+};
 let planningPages = 0;
 let localLinksChecked = 0;
 for (const destination of destinationRegistry) {
@@ -28,6 +50,13 @@ for (const destination of destinationRegistry) {
   const file = `out/${destination.slug}/index.html`;
   assert.ok(existsSync(file), `Missing export: ${file}`);
   const html = readFileSync(file, 'utf8');
+  const footerLinks = verifyFooter(html, destination.slug);
+  for (const nearby of nearbyExamples[destination.slug] || []) {
+    assert.ok(footerLinks.includes(`${basePath}/${nearby}/`), `Missing nearby footer destination ${nearby} on ${destination.slug}`);
+  }
+  const coordinates = countryCoordinates[destination.code];
+  assert.ok(coordinates?.length === 2 && coordinates.every(Number.isFinite), `Missing geographic position: ${destination.code}`);
+  assert.ok(Math.abs(coordinates[0]) <= 90 && Math.abs(coordinates[1]) <= 180, `Invalid geographic position: ${destination.code}`);
   assert.ok(html.includes(`<link rel="canonical" href="${url}"`), `Canonical mismatch: ${file}`);
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, `One main heading: ${file}`);
   assert.ok(!/\$(?:Infinity|NaN)|href="[^"]*undefined/.test(html), `Invalid price or URL: ${file}`);
@@ -47,4 +76,4 @@ for (const destination of destinationRegistry) {
   }
 }
 assert.equal(planningPages, 139, '139 new planning guides');
-console.log(`PASS: 195-country baseline, 200 destination pages, 210 sitemap URLs, 139 honest availability states, ${localLinksChecked} internal links, canonical URLs and structured data.`);
+console.log(`PASS: 195-country baseline, 200 destination pages, 210 sitemap URLs, 139 honest availability states, ${localLinksChecked} internal links, six relevant footer destinations per page, canonical URLs and structured data.`);

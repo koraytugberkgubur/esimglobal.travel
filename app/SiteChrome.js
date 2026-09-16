@@ -1,5 +1,6 @@
 import { sitePath } from "./sitePath";
 import { countryPages } from "./countryPages";
+import { getFooterDestinations } from "./footerDestinations";
 
 export function BrandLogo({ inverted = false }) {
   return (
@@ -54,25 +55,8 @@ export function CountryBreadcrumbs({ region, country }) {
   );
 }
 
-const footerDestinations = [
-  { slug: "france", name: "France", region: "Europe" },
-  ...Object.entries(countryPages).map(([slug, destination]) => ({ slug, name: destination.name, region: destination.region })),
-];
-
-const featuredFooterSlugs = {
-  Europe: ["france", "italy", "spain", "united-kingdom", "germany", "portugal", "greece", "netherlands"],
-  Asia: ["japan", "thailand", "turkey", "china", "india", "indonesia", "south-korea", "philippines"],
-  Africa: ["south-africa", "egypt", "morocco", "kenya", "tanzania", "nigeria", "ghana", "mauritius"],
-  "North America": ["united-states", "canada", "mexico", "costa-rica", "dominican-republic", "jamaica", "cuba", "panama"],
-  "South America": ["brazil", "argentina", "chile", "colombia", "peru", "ecuador", "suriname", "venezuela"],
-  Oceania: ["australia", "new-zealand", "fiji", "samoa", "tonga", "papua-new-guinea", "palau", "vanuatu"],
-};
-
-export function SiteFooter({ region, country }) {
-  const regions = region ? [region, ...continentOrder.filter((name) => name !== region)] : continentOrder;
-  function countryLink(item) {
-    return <li key={item.slug}><a href={sitePath(`/${item.slug}/`)} aria-current={item.name === country ? "page" : undefined}>{item.name}</a></li>;
-  }
+export function SiteFooter({ country }) {
+  const destinations = getFooterDestinations(country);
   return (
     <footer className="atlasFooter" id="about">
       <div className="footerTopRow">
@@ -92,25 +76,12 @@ export function SiteFooter({ region, country }) {
           </ul>
         </nav>
       </div>
-      <section className="footerCountrySection" aria-labelledby="footer-countries-title">
-        <header><h2 id="footer-countries-title">Country eSIM guides</h2><p>{footerDestinations.length} destinations</p></header>
-        <div className="footerCountryGrid">
-          {regions.map((name) => {
-            const destinations = footerDestinations.filter((item) => item.region === name);
-            const featured = featuredFooterSlugs[name].slice(0, 4).map((slug) => destinations.find((item) => item.slug === slug)).filter(Boolean);
-            const remaining = destinations.filter((item) => !featured.some((entry) => entry.slug === item.slug)).sort((a, b) => a.name.localeCompare(b.name));
-            const headingId = `footer-region-${continentCodes[name].toLowerCase()}`;
-            return <nav className="footerCountryGroup" key={name} aria-labelledby={headingId}>
-              <h3 id={headingId}>{name}<span>{destinations.length}</span></h3>
-              <ul>{featured.map(countryLink)}</ul>
-              {remaining.length > 0 && <details>
-                <summary><span className="footerMoreLabel">View {remaining.length} more</span><span className="footerLessLabel">Show fewer</span></summary>
-                <ul>{remaining.map(countryLink)}</ul>
-              </details>}
-            </nav>;
-          })}
-        </div>
-      </section>
+      <nav className="footerCountrySection" aria-labelledby="footer-countries-title">
+        <h2 id="footer-countries-title">{country ? `Explore near ${country}` : "Featured destinations"}</h2>
+        <ul className="footerCountryLinks">
+          {destinations.map((item) => <li key={item.slug}><a href={sitePath(`/${item.slug}/`)}>{item.name}<span aria-hidden="true">↗</span></a></li>)}
+        </ul>
+      </nav>
       <div className="footerBase"><span>© {new Date().getFullYear()} eSIM Global Travel</span><span>Provider terms apply · Check current prices</span><span>Istanbul · Worldwide</span></div>
     </footer>
   );
