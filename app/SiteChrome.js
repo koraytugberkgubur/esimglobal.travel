@@ -59,25 +59,60 @@ const footerDestinations = [
   ...Object.entries(countryPages).map(([slug, destination]) => ({ slug, name: destination.name, region: destination.region })),
 ];
 
+const featuredFooterSlugs = {
+  Europe: ["france", "italy", "spain", "united-kingdom", "germany", "portugal", "greece", "netherlands"],
+  Asia: ["japan", "thailand", "turkey", "china", "india", "indonesia", "south-korea", "philippines"],
+  Africa: ["south-africa", "egypt", "morocco", "kenya", "tanzania", "nigeria", "ghana", "mauritius"],
+  "North America": ["united-states", "canada", "mexico", "costa-rica", "dominican-republic", "jamaica", "cuba", "panama"],
+  "South America": ["brazil", "argentina", "chile", "colombia", "peru", "ecuador", "suriname", "venezuela"],
+  Oceania: ["australia", "new-zealand", "fiji", "samoa", "tonga", "papua-new-guinea", "palau", "vanuatu"],
+};
+
 export function SiteFooter({ region, country }) {
-  const contextualDestinations = region
-    ? footerDestinations.filter((item) => item.region === region && item.name !== country).slice(0, 6)
-    : footerDestinations.filter((item) => ["France", "Japan", "United States", "Australia", "Brazil", "South Africa"].includes(item.name));
-  const destinationTitle = region ? `${region} guides` : "Popular destinations";
+  const regions = region ? [region, ...continentOrder.filter((name) => name !== region)] : continentOrder;
+  function countryLink(item) {
+    return <li key={item.slug}><a href={sitePath(`/${item.slug}/`)} aria-current={item.name === country ? "page" : undefined}>{item.name}</a></li>;
+  }
   return (
     <footer className="atlasFooter" id="about">
-      <div className="footerLead">
-        <a href={sitePath("/")} aria-label="eSIM Global Travel home"><BrandLogo inverted /></a>
-        <p>Independent travel eSIM research, organized for clearer decisions.</p>
-        <small className="footerCompanyDefinition">eSIM Global Travel is an Istanbul-based comparison publisher. We organize provider-published plan data, destination coverage and practical setup guidance for international travelers.</small>
-        <a className="footerCta" href={sitePath("/#compare")}>Compare your destination <span aria-hidden="true">⌁</span></a>
+      <div className="footerTopRow">
+        <div className="footerLead">
+          <a href={sitePath("/")} aria-label="eSIM Global Travel home"><BrandLogo inverted /></a>
+          <p>Travel eSIM research, by destination.</p>
+          <small className="footerCompanyDefinition">Independent guides from Istanbul. Compare coverage, data and provider terms before you travel.</small>
+        </div>
+        <nav className="footerGuideNav" aria-labelledby="footer-explore-title">
+          <h2 id="footer-explore-title">Plan your connection</h2>
+          <ul>
+            <li><a href={sitePath("/#compare")}>Compare on the map</a></li>
+            <li><a href={sitePath("/what-is-a-travel-esim/")}>What is a travel eSIM?</a></li>
+            <li><a href={sitePath("/how-to-choose-a-travel-esim/")}>How to choose an eSIM</a></li>
+            <li><a href={sitePath("/best-travel-esim/")}>Compare travel eSIMs</a></li>
+            <li><a href={sitePath("/esim-glossary/")}>eSIM glossary</a></li>
+            <li><a href={sitePath("/sitemap.xml")}>Sitemap</a></li>
+          </ul>
+        </nav>
       </div>
-      <div className="footerNav">
-        <nav aria-labelledby="footer-explore-title"><h2 id="footer-explore-title">Explore</h2><ul><li><a href={sitePath("/#compare")}>Compare eSIM plans</a></li><li><a href={sitePath("/#how-it-works")}>How travel eSIMs work</a></li><li><a href={sitePath("/#compare")}>Global coverage</a></li></ul></nav>
-        <nav aria-labelledby="footer-countries-title"><h2 id="footer-countries-title">{destinationTitle}</h2><ul>{contextualDestinations.map((item) => <li key={item.slug}><a href={sitePath(`/${item.slug}/`)}>{item.name} eSIMs</a></li>)}</ul></nav>
-        <section aria-labelledby="footer-marketplace-title"><h2 id="footer-marketplace-title">Marketplace</h2><ul><li>Independent comparisons</li><li>Provider terms apply</li><li>Prices shown in USD</li></ul></section>
-      </div>
-      <div className="footerBase"><span>© {new Date().getFullYear()} eSIM Global Travel</span><span>Check the source before you connect.</span><span>Istanbul · Worldwide</span></div>
+      <section className="footerCountrySection" aria-labelledby="footer-countries-title">
+        <header><h2 id="footer-countries-title">Country eSIM guides</h2><p>{footerDestinations.length} destinations, organized by continent</p></header>
+        <div className="footerCountryGrid">
+          {regions.map((name) => {
+            const destinations = footerDestinations.filter((item) => item.region === name);
+            const featured = featuredFooterSlugs[name].map((slug) => destinations.find((item) => item.slug === slug)).filter(Boolean);
+            const remaining = destinations.filter((item) => !featuredFooterSlugs[name].includes(item.slug)).sort((a, b) => a.name.localeCompare(b.name));
+            const headingId = `footer-region-${continentCodes[name].toLowerCase()}`;
+            return <nav className="footerCountryGroup" key={name} aria-labelledby={headingId}>
+              <h3 id={headingId}>{name}<span>{destinations.length}</span></h3>
+              <ul>{featured.map(countryLink)}</ul>
+              {remaining.length > 0 && <details>
+                <summary><span className="footerMoreLabel">View {remaining.length} more</span><span className="footerLessLabel">Show fewer</span></summary>
+                <ul>{remaining.map(countryLink)}</ul>
+              </details>}
+            </nav>;
+          })}
+        </div>
+      </section>
+      <div className="footerBase"><span>© {new Date().getFullYear()} eSIM Global Travel</span><span>Provider terms apply · Check current prices</span><span>Istanbul · Worldwide</span></div>
     </footer>
   );
 }
