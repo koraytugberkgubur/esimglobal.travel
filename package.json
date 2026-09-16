@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "verify:export": "node scripts/verify-static-export.mjs"
   },
   "dependencies": {
     "@svg-maps/world": "^2.0.0",

@@ -5,7 +5,8 @@ import { HeadingReadMore, HeadingSignal } from "./EditorialHeading";
 import { useMemo, useState } from "react";
 import { sitePath } from "./sitePath";
 import world from "@svg-maps/world";
-import { continents, countries } from "countries-list";
+import { continents } from "countries-list";
+import { destinationRegistry, destinationByCode } from "./countryRegistry";
 
 const regionOrder = ["NA", "SA", "EU", "AF", "AS", "OC"];
 const regionLabels = continents;
@@ -33,18 +34,15 @@ const brandFacts = {
 };
 function rankOffers(region, country) {
   const offers = [...(brandOffers[region] || [])];
-  if (!country || !offers.length) return offers;
-  const lowestPrice = Math.min(...offers.map((offer) => offer.price));
-  return offers.sort((a, b) => {
-    const rank = (offer) => offer.brand === "Saily" ? 0 : offer.price === lowestPrice ? 1 : offer.data === "Unlimited" ? 2 : 3;
-    return rank(a) - rank(b) || a.price - b.price;
-  });
+  // Regional examples are not verified country offers.
+  if (country) return [];
+  return offers;
 }
 
 const mapCountries = world.locations
   .map((location) => {
     const code = location.id.toUpperCase();
-    const details = countries[code];
+    const details = destinationByCode[code];
     return details ? { ...location, code, ...details } : null;
   })
   .filter((country) => country && country.continent !== "AN");
@@ -59,7 +57,7 @@ export default function WorldMap() {
   const visibleCountries = useMemo(() => {
     if (!selectedRegion) return [];
     const query = search.trim().toLowerCase();
-    return mapCountries
+    return destinationRegistry
       .filter((country) => country.continent === selectedRegion)
       .filter((country) => !query || country.name.toLowerCase().includes(query))
       .sort((a, b) => {
@@ -110,13 +108,6 @@ export default function WorldMap() {
     return `${offer.data} for ${offer.days} days in ${destination}, priced at $${offer.price.toFixed(2)}. Compare allowance and included features before choosing.`;
   }
 
-  function countryPrice(country) {
-    const base = brandOffers[country.continent][0]?.price;
-    if (!base) return null;
-    const adjustment = ((country.code.charCodeAt(0) + country.code.charCodeAt(1)) % 3) * 0.5;
-    return (base + adjustment).toFixed(2);
-  }
-
   function handleCountryKey(event, country) {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -133,11 +124,11 @@ export default function WorldMap() {
             {selectedRegion ? regionLabels[selectedRegion] : "Where will you use mobile data?"}
           </h2>
           {selectedCountry && <h3 className="selectedCountryHeading">{selectedCountry.name}</h3>}
-          <HeadingReadMore href="#map-workspace" label="Open the index">Choose a continent and destination to inspect published allowances, validity and starting prices.</HeadingReadMore>
+          <HeadingReadMore href="#map-workspace" label="Open the index">Choose a continent, search every country guide, and check the exact plan’s destination coverage.</HeadingReadMore>
         </div>
         <p className="coverageCount">
-          <strong>{mapCountries.length}</strong>
-          <span>mapped destinations</span>
+          <strong>{destinationRegistry.length}</strong>
+          <span>destination guides</span>
         </p>
       </div>
 
@@ -165,7 +156,7 @@ export default function WorldMap() {
 
       <div className={`mapWorkspace ${selectedRegion ? "isExploring" : ""}`} id="map-workspace">
         <div className="mapCanvas">
-          {selectedRegion && (
+          {selectedRegion && !selectedCountry && (
             <section className="mapPlanOverlay" aria-labelledby="regional-options-title">
               <h3 className="srOnly" id="regional-options-title">Best eSIM options for {regionLabels[selectedRegion]}</h3>
               <p>Best regional eSIMs <span>Preview pricing</span></p>
@@ -249,7 +240,7 @@ export default function WorldMap() {
                 <div><dt>Included</dt><dd>{brandFacts[selectedOffer.brand].extra}</dd></div>
               </dl>
               <footer>
-                <span>{mapCountries.filter((country) => country.continent === selectedRegion).length} mapped destinations</span>
+                <span>{destinationRegistry.filter((country) => country.continent === selectedRegion).length} destination guides</span>
                 <span>Provider terms apply</span>
               </footer>
             </article>
@@ -264,7 +255,7 @@ export default function WorldMap() {
         </div>
 
         {selectedRegion && (
-          <aside className="countryManifest" aria-live="polite">
+          <aside className={`countryManifest ${selectedCountry ? "hasSelection" : ""}`} aria-live="polite">
             <div className="manifestHeader">
               <div>
                 <p className="finderStep">Destination manifest</p>
@@ -273,7 +264,7 @@ export default function WorldMap() {
               <span>{visibleCountries.length}</span>
             </div>
 
-            <section className="manifestPlans" aria-labelledby="manifest-plans-title">
+            {!selectedCountry && <section className="manifestPlans" aria-labelledby="manifest-plans-title">
               <h4 className="srOnly" id="manifest-plans-title">Regional eSIM plan options</h4>
               <ul>
               {rankedOffers.map((offer) => (
@@ -295,7 +286,7 @@ export default function WorldMap() {
               {!rankedOffers.length && <li className="noOffers">No comparable consumer offers</li>}
               </ul>
               <p>{selectedRegion === "EU" ? "Verified provider pricing" : "Marketplace preview · verify before purchase"}</p>
-            </section>
+            </section>}
 
             <label className="countrySearch">
               <span className="srOnly">Search countries in {regionLabels[selectedRegion]}</span>
@@ -319,7 +310,7 @@ export default function WorldMap() {
                 >
                   <span className="countryCode">{country.code}</span>
                   <span>{country.name}</span>
-                  <span className="countryPrice">{countryPrice(country) ? <>from <b>${countryPrice(country)}</b></> : "Coverage check"}</span>
+                  <span className="countryPrice">Open guide</span>
                   <span className="countryArrow" aria-hidden="true">
                     {selectedCountry?.code === country.code ? "✓" : "⌁"}
                   </span>
@@ -332,8 +323,8 @@ export default function WorldMap() {
               <div className="countryTicket">
                 <span>Selected destination</span>
                 <strong>{selectedCountry.name}</strong>
-                <small>{selectedOffer ? `${selectedOffer.brand} ${selectedOffer.product} · ${selectedOffer.data} · ${selectedOffer.days} days · $${selectedOffer.price.toFixed(2)}` : "No comparable consumer plan found"}</small>
-                {({ FR: "france", IT: "italy", ES: "spain", TR: "turkey", JP: "japan", US: "united-states" })[selectedCountry.code] && <a href={sitePath(`/${({ FR: "france", IT: "italy", ES: "spain", TR: "turkey", JP: "japan", US: "united-states" })[selectedCountry.code]}/`)}>Open the complete {selectedCountry.name} comparison <b aria-hidden="true">⌁</b></a>}
+                <small>Review destination-specific coverage and availability before purchasing.</small>
+                <a href={sitePath(`/${selectedCountry.slug}/`)}>Open the {selectedCountry.name} guide <b aria-hidden="true">⌁</b></a>
               </div>
             )}
           </aside>

@@ -12,7 +12,7 @@ import { destinationIdentity } from "../destinationIdentity";
 export const metadata = {
   title: "Best eSIM for France: Compare Data Plans & Prices | eSIM Global",
   description: "Compare travel eSIM plans for France by provider, data, validity, network and price. Find prepaid France eSIM options for your trip.",
-  alternates: { canonical: "https://esimglobal.travel/france/" },
+  alternates: { canonical: siteUrl("/france/") },
   openGraph: {
     title: "Best eSIM for France: Compare Data Plans & Prices",
     description: "Compare prepaid France eSIM plans, coverage, data, validity and prices before you travel.",

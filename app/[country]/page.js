@@ -1,3 +1,4 @@
+import CountryPlanningGuide from "../CountryPlanningGuide";
 import { notFound } from "next/navigation";
 import { countryPages, countrySlugs } from "../countryPages";
 import { HeroArrivalBrief, HeroQuickAnswer } from "../CountryHeroContent";
@@ -18,10 +19,17 @@ export async function generateMetadata({ params }) {
   const { country } = await params;
   const destination = countryPages[country];
   if (!destination) return {};
+  if (destination.availability === "unverified") {
+    const title = `${destination.name} eSIM Guide: Coverage & Setup Checks | eSIM Global`;
+    const description = `Plan mobile connectivity in ${destination.name}. Check destination coverage, device compatibility, activation, calls and provider availability before buying an eSIM.`;
+    return { title, description, alternates: { canonical: siteUrl(`/${country}/`) },
+      openGraph: { title, description, url: siteUrl(`/${country}/`), type: "website" },
+      twitter: { card: "summary", title, description } };
+  }
   return {
     title: `Best eSIM for ${destination.name}: Compare Plans & Prices | eSIM Global`,
     description: `Compare travel eSIM plans for ${destination.name} by provider, data, validity, network and price. Find the right prepaid eSIM for your trip.`,
-    alternates: { canonical: `https://esimglobal.travel/${country}/` },
+    alternates: { canonical: siteUrl(`/${country}/`) },
     openGraph: {
       title: `Best eSIM for ${destination.name}: Compare Plans & Prices`,
       description: `Compare prepaid ${destination.name} eSIM plans, coverage, data, validity and prices before you travel.`,
@@ -43,6 +51,7 @@ export default async function CountryPage({ params }) {
   const { country } = await params;
   const destination = countryPages[country];
   if (!destination) notFound();
+  if (destination.availability === "unverified") return <CountryPlanningGuide destination={destination} />;
   const faqId = `${country}-faq-title`;
   const heroTitleId = `${country}-hero-title`;
   const essentialsTitleId = `${country}-essentials-title`;

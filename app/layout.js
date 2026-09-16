@@ -1,3 +1,4 @@
+import { siteUrl } from "./sitePath";
 import "./globals.css";
 
 export const metadata = {
@@ -15,11 +16,11 @@ export const metadata = {
       "max-video-preview": -1,
     },
   },
-  alternates: { canonical: "https://esimglobal.travel/" },
+  alternates: { canonical: siteUrl("/") },
   openGraph: {
     title: "Compare Global eSIM Plans for International Travel",
     description: "Compare travel eSIM providers, coverage and prices across 190+ destinations.",
-    url: "https://esimglobal.travel/",
+    url: siteUrl("/"),
     siteName: "eSIM Global Travel",
     type: "website",
   },

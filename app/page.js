@@ -1,3 +1,4 @@
+import DestinationDirectory from "./DestinationDirectory";
 import WorldMap from "./WorldMap";
 import EsimGuide from "./EsimGuide";
 import { HeadingReadMore, HeadingSignal } from "./EditorialHeading";
@@ -104,6 +105,7 @@ export default function Home() {
           See the published allowance, validity and starting price before choosing a travel eSIM. Each country guide keeps the source close to the claim.
         </HeadingReadMore>
         <WorldMap />
+        <DestinationDirectory />
         <EsimGuide />
         <section className="availability" id="how-it-works" aria-labelledby="how-it-works-title">
           <header className="availabilityHeading">

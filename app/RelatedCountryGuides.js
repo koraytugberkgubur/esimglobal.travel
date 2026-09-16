@@ -20,7 +20,7 @@ const countryGuides = [
 ];
 
 function operatorNames(text) {
-  return text
+  return (text || "Confirm the provider’s local partner network")
     .replace(/ operate.*$/i, "")
     .replace(/ provide.*$/i, "")
     .replace(/ and (?=[^,]+$)/, " · ")
@@ -36,7 +36,7 @@ export default function RelatedCountryGuides({ currentCountry, currentRegion }) 
   return (
     <section className="onwardDeck" id="related-destinations" aria-labelledby={headingId}>
       <header>
-        <div><p className="routeKicker">MORE IN {currentRegion.toUpperCase()}</p><h2 id={headingId}><HeadingSignal />Continue your route in {currentRegion}</h2><p className="onwardIntro">Compare verified Saily starting prices for nearby destinations with live guides.</p></div>
+        <div><p className="routeKicker">MORE IN {currentRegion.toUpperCase()}</p><h2 id={headingId}><HeadingSignal />Continue your route in {currentRegion}</h2><p className="onwardIntro">Explore country guides and check provider availability for your onward journey.</p></div>
         <span className="headingMetric">{relatedGuides.length} relevant guides</span>
       </header>
       <nav aria-label={`Other country eSIM guides from ${currentCountry}`}>
@@ -50,9 +50,9 @@ export default function RelatedCountryGuides({ currentCountry, currentRegion }) 
                   <span className="routeCardCode">{guide.code}</span>
                   <span className="routeCardRegion">{guide.region}</span>
                   <strong>{guide.name}</strong>
-                  <small>{guide.city} connection guide</small>
+                  <small>{guide.city || guide.name} connection guide</small>
                   <span className="routeCardNetworks">{operatorNames(guide.networks)}</span>
-                  <span className="routeCardPrice"><small>Plans from</small><b>${startingPrice.toFixed(2)}</b></span>
+                  <span className="routeCardPrice"><small>{Number.isFinite(startingPrice) ? "Plans from" : "Availability"}</small><b>{Number.isFinite(startingPrice) ? `$${startingPrice.toFixed(2)}` : "Check provider"}</b></span>
                   <span className="routeCardAction">Compare {guide.name} <i aria-hidden="true">⌁</i></span>
                 </Link>
               </li>

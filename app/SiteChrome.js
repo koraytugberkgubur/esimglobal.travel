@@ -1,3 +1,4 @@
+import { continentSlug } from "./countryRegistry";
 import { sitePath } from "./sitePath";
 import { countryPages } from "./countryPages";
 
@@ -19,6 +20,7 @@ export function SiteHeader() {
         <nav aria-label="Primary navigation">
           <ul>
             <li><a href={sitePath("/#compare")}>Compare plans</a></li>
+            <li><a href={sitePath("/#destinations")}>All destinations</a></li>
             <li><a href={sitePath("/#how-it-works")}>How it works</a></li>
             <li><a href={sitePath("/#about")}>About</a></li>
           </ul>
@@ -38,10 +40,9 @@ const continentOrder = ["Europe", "Asia", "Africa", "North America", "South Amer
 const continentCodes = { Europe: "EU", Asia: "AS", Africa: "AF", "North America": "NA", "South America": "SA", Oceania: "OC" };
 
 export function CountryBreadcrumbs({ region, country }) {
-  const regionalDestinations = destinationDirectory.filter((item) => item.region === region);
+  const regionalDestinations = destinationDirectory.filter((item) => item.region === region).sort((a, b) => a.name.localeCompare(b.name));
   const continentDestinations = continentOrder.map((name) => {
-    const landingPage = destinationDirectory.find((item) => item.region === name);
-    return { name, href: landingPage.href, code: continentCodes[name], count: destinationDirectory.filter((item) => item.region === name).length };
+    return { name, href: `/#destinations-${continentSlug(name)}`, code: continentCodes[name], count: destinationDirectory.filter((item) => item.region === name).length };
   });
   return (
     <nav className="breadcrumbs" aria-label="Breadcrumb">
@@ -73,7 +74,7 @@ export function SiteFooter({ region, country }) {
         <a className="footerCta" href={sitePath("/#compare")}>Compare your destination <span aria-hidden="true">⌁</span></a>
       </div>
       <div className="footerNav">
-        <nav aria-labelledby="footer-explore-title"><h2 id="footer-explore-title">Explore</h2><ul><li><a href={sitePath("/#compare")}>Compare eSIM plans</a></li><li><a href={sitePath("/#how-it-works")}>How travel eSIMs work</a></li><li><a href={sitePath("/#compare")}>Global coverage</a></li></ul></nav>
+        <nav aria-labelledby="footer-explore-title"><h2 id="footer-explore-title">Explore</h2><ul><li><a href={sitePath("/#compare")}>Compare eSIM plans</a></li><li><a href={sitePath("/#how-it-works")}>How travel eSIMs work</a></li><li><a href={sitePath("/#destinations")}>All country guides</a></li></ul></nav>
         <nav aria-labelledby="footer-countries-title"><h2 id="footer-countries-title">{destinationTitle}</h2><ul>{contextualDestinations.map((item) => <li key={item.slug}><a href={sitePath(`/${item.slug}/`)}>{item.name} eSIMs</a></li>)}</ul></nav>
         <section aria-labelledby="footer-marketplace-title"><h2 id="footer-marketplace-title">Marketplace</h2><ul><li>Independent comparisons</li><li>Provider terms apply</li><li>Prices shown in USD</li></ul></section>
       </div>

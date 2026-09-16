@@ -3,7 +3,7 @@ import { siteUrl } from "./sitePath";
 
 export const dynamic = "force-static";
 
-const lastModified = "2026-08-24T12:00:00+03:00";
+const lastModified = "2026-09-17T00:00:00+03:00";
 
 const editorialRoutes = [
   "airalo-alternatives",
@@ -34,7 +34,7 @@ export default function sitemap() {
     ...countryRoutes.map(({ route, image }) => ({
       url: siteUrl(`/${route}/`),
       lastModified,
-      images: [siteUrl(image)],
+      ...(image ? { images: [siteUrl(image)] } : {}),
     })),
     ...editorialRoutes.map((route) => ({
       url: siteUrl(`/${route}/`),

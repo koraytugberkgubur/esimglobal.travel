@@ -1,3 +1,4 @@
+import { destinationRegistry } from "./countryRegistry";
 import { buildProviderPlanCatalog } from "./providerPlanCatalog";
 
 const images = { Europe: "/images/france-esim-hero.jpg", Asia: "/images/japan-esim-hero.jpg", Africa: "/images/spain-esim-hero.jpg", "North America": "/images/united-states-esim-hero.jpg", "South America": "/images/spain-esim-hero.jpg", Oceania: "/images/japan-esim-hero.jpg" };
@@ -25,4 +26,14 @@ export const countryPages = Object.fromEntries(destinations.map(([slug,name,flag
   sourceUrl: `https://saily.com/esim-${slug}/`, sourceChecked: "2026-08-24", plans: buildProviderPlanCatalog(name, slug, price),
 }]));
 
+// Newly indexed destinations have planning guides, not invented commercial offers.
+for (const destination of destinationRegistry) {
+  if (destination.slug === "france" || countryPages[destination.slug]) continue;
+  countryPages[destination.slug] = {
+    ...destination,
+    availability: "unverified",
+    plans: [],
+    updated: "2026-09-17",
+  };
+}
 export const countrySlugs = Object.keys(countryPages);
