@@ -1,3 +1,5 @@
+import PriceQuote from "./PriceQuote";
+import { hasCurrentPrice } from "./pricePolicy";
 import Link from "next/link";
 import { countryPages } from "./countryPages";
 import { HeadingSignal } from "./EditorialHeading";
@@ -42,7 +44,7 @@ export default function RelatedCountryGuides({ currentCountry, currentRegion }) 
       <nav aria-label={`Other country eSIM guides from ${currentCountry}`}>
         <ul>
           {relatedGuides.map((guide) => {
-            const startingPrice = Math.min(...guide.plans.map((plan) => plan.price).filter(Number.isFinite));
+            const startingPlan = guide.plans.filter(plan => hasCurrentPrice(plan) && plan.currency === "USD").sort((a,b) => a.price-b.price)[0];
             return (
               <li key={guide.slug}>
                 <Link href={`/${guide.slug}/`} aria-label={`Compare eSIM plans for ${guide.name}`}>
@@ -52,7 +54,7 @@ export default function RelatedCountryGuides({ currentCountry, currentRegion }) 
                   <strong>{guide.name}</strong>
                   <small>{guide.city || guide.name} connection guide</small>
                   <span className="routeCardNetworks">{operatorNames(guide.networks)}</span>
-                  <span className="routeCardPrice"><small>{Number.isFinite(startingPrice) ? "Plans from" : "Availability"}</small><b>{Number.isFinite(startingPrice) ? `$${startingPrice.toFixed(2)}` : "Check provider"}</b></span>
+                  <span className="routeCardPrice"><small>{Boolean(startingPlan) ? "Plans from" : "Availability"}</small><b>{Boolean(startingPlan) ? <PriceQuote plan={startingPlan}/> : "Check provider"}</b></span>
                   <span className="routeCardAction">Compare {guide.name} <i aria-hidden="true">⌁</i></span>
                 </Link>
               </li>

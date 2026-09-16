@@ -4,6 +4,10 @@ import { HeadingReadMore, HeadingSignal } from "./EditorialHeading";
 
 import { useMemo, useState } from "react";
 import { sitePath } from "./sitePath";
+import { destinationByCode } from "./countryRegistry";
+import { buildProviderPlanCatalog } from "./providerPlanCatalog";
+import { providerHighlights, samePackage, validityText } from "./pricePolicy";
+import { usePricePresentation } from "./PriceQuote";
 import world from "@svg-maps/world";
 import { continents, countries } from "countries-list";
 
@@ -17,14 +21,6 @@ const regionViewBoxes = {
   AS: "480 65 530 430",
   OC: "690 300 320 330",
 };
-const brandOffers = {
-  NA: [{ brand: "Saily", product: "North America", data: "5 GB", days: 30, price: 16.99, color: "#3626a7" }, { brand: "Airalo", product: "North America Regional", data: "3 GB", days: 30, price: 12, color: "#ff6b4a" }, { brand: "Holafly", product: "North America Unlimited", data: "Unlimited", days: 7, price: 29, color: "#7b2dff" }],
-  SA: [{ brand: "Saily", product: "Latin America", data: "3 GB", days: 30, price: 15.99, color: "#3626a7" }, { brand: "Airalo", product: "Latamlink", data: "5 GB", days: 30, price: 27, color: "#ff6b4a" }, { brand: "Holafly", product: "Latin America Unlimited", data: "Unlimited", days: 7, price: 34, color: "#7b2dff" }],
-  EU: [{ brand: "Airalo", product: "Eurolink", data: "3 GB", days: 30, price: 11, color: "#ff6b4a", verified: true }, { brand: "Saily", product: "Europe", data: "3 GB", days: 30, price: 12.49, color: "#3626a7", verified: true }, { brand: "Holafly", product: "Europe Unlimited", data: "Unlimited", days: 7, price: 27.5, color: "#7b2dff", verified: true }],
-  AF: [{ brand: "Saily", product: "Africa", data: "3 GB", days: 30, price: 19.99, color: "#3626a7" }, { brand: "Airalo", product: "Hello Africa", data: "3 GB", days: 30, price: 14, color: "#ff6b4a" }, { brand: "Holafly", product: "Africa Unlimited", data: "Unlimited", days: 7, price: 39, color: "#7b2dff" }],
-  AS: [{ brand: "Saily", product: "Asia & Oceania", data: "3 GB", days: 30, price: 12.49, color: "#3626a7" }, { brand: "Nomad", product: "APAC", data: "5 GB", days: 30, price: 15, color: "#6f5cff" }, { brand: "Airalo", product: "Asialink", data: "10 GB", days: 30, price: 37, color: "#ff6b4a" }],
-  OC: [{ brand: "Saily", product: "Oceania", data: "5 GB", days: 30, price: 19.99, color: "#3626a7" }, { brand: "Nomad", product: "Oceania", data: "5 GB", days: 30, price: 16, color: "#6f5cff" }, { brand: "Airalo", product: "Island Hopper", data: "3 GB", days: 30, price: 12, color: "#ff6b4a" }],
-};
 const brandFacts = {
   Saily: { network: "3G / 4G / 5G", delivery: "Instant QR", activation: "On arrival", extra: "Web protection" },
   Airalo: { network: "3G / 4G / 5G", delivery: "Instant eSIM", activation: "On network", extra: "Top-ups available" },
@@ -32,13 +28,9 @@ const brandFacts = {
   Nomad: { network: "4G / 5G", delivery: "Instant eSIM", activation: "On network", extra: "Add-on data" },
 };
 function rankOffers(region, country) {
-  const offers = [...(brandOffers[region] || [])];
-  if (!country || !offers.length) return offers;
-  const lowestPrice = Math.min(...offers.map((offer) => offer.price));
-  return offers.sort((a, b) => {
-    const rank = (offer) => offer.brand === "Saily" ? 0 : offer.price === lowestPrice ? 1 : offer.data === "Unlimited" ? 2 : 3;
-    return rank(a) - rank(b) || a.price - b.price;
-  });
+  const destination = country && destinationByCode[country.code];
+  if (!destination) return [];
+  return providerHighlights(buildProviderPlanCatalog(destination.name, destination.slug)).slice(0, 3);
 }
 
 const mapCountries = world.locations
@@ -50,6 +42,7 @@ const mapCountries = world.locations
   .filter((country) => country && country.continent !== "AN");
 
 export default function WorldMap() {
+  const { priceText, checkedText, hasCurrentPrice } = usePricePresentation();
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [search, setSearch] = useState("");
@@ -78,7 +71,7 @@ export default function WorldMap() {
     setSelectedRegion(region);
     setSelectedCountry(null);
     setSearch("");
-    setSelectedOffer(region ? brandOffers[region][0] || null : null);
+    setSelectedOffer(null);
     setHoveredOffer(null);
   }
 
@@ -91,30 +84,10 @@ export default function WorldMap() {
   }
 
   function comparisonCopy(offer) {
-    if (!offer) return "Choose an option to compare its value, allowance, and trip length.";
-    const destination = selectedCountry?.name || regionLabels[selectedRegion];
-    const alternatives = rankedOffers.filter((item) => item.brand !== offer.brand).sort((a, b) => a.price - b.price);
-    const cheapest = [...rankedOffers].sort((a, b) => a.price - b.price)[0];
-    const nearest = alternatives[0];
-    if (offer.brand === "Saily") {
-      const difference = cheapest && cheapest.brand !== offer.brand ? offer.price - cheapest.price : 0;
-      return `Balanced pick for ${destination}: ${offer.data} for ${offer.days} days with web protection${difference > 0 ? `, for $${difference.toFixed(2)} more than the lowest-priced option` : " at the lowest listed price"}.`;
-    }
-    if (offer.price === cheapest?.price) {
-      const saving = nearest ? nearest.price - offer.price : 0;
-      return `Lowest listed price for ${destination}: ${offer.data} for ${offer.days} days${saving > 0 ? `, saving $${saving.toFixed(2)} versus the next option` : ""}.`;
-    }
-    if (offer.data === "Unlimited") {
-      return `Unlimited-data choice for ${destination}: best suited to heavy use, at $${(offer.price - cheapest.price).toFixed(2)} more than the lowest-priced option.`;
-    }
-    return `${offer.data} for ${offer.days} days in ${destination}, priced at $${offer.price.toFixed(2)}. Compare allowance and included features before choosing.`;
-  }
-
-  function countryPrice(country) {
-    const base = brandOffers[country.continent][0]?.price;
-    if (!base) return null;
-    const adjustment = ((country.code.charCodeAt(0) + country.code.charCodeAt(1)) % 3) * 0.5;
-    return (base + adjustment).toFixed(2);
+    if (!offer) return "Select a country to see its checked package prices.";
+    if (!hasCurrentPrice(offer)) return "Confirm this provider’s country coverage, allowance, validity and price before buying.";
+    const equivalent = rankedOffers.filter(item => item.brand !== offer.brand && samePackage(item, offer));
+    return `${offer.dataLabel} · ${validityText(offer)} · ${priceText(offer)}. ${checkedText(offer)}. ${equivalent.length ? "Other displayed packages with the same allowance, validity and currency can be compared directly." : "Other offers may have different allowances, durations or currencies."}`;
   }
 
   function handleCountryKey(event, country) {
@@ -167,8 +140,8 @@ export default function WorldMap() {
         <div className="mapCanvas">
           {selectedRegion && (
             <section className="mapPlanOverlay" aria-labelledby="regional-options-title">
-              <h3 className="srOnly" id="regional-options-title">Best eSIM options for {regionLabels[selectedRegion]}</h3>
-              <p>Best regional eSIMs <span>Preview pricing</span></p>
+              <h3 className="srOnly" id="regional-options-title">Country eSIM options for {regionLabels[selectedRegion]}</h3>
+              <p>{selectedCountry ? "Country packages" : "Choose a country"}<span>Matched plan details</span></p>
               <ul>
                 {rankedOffers.map((offer, index) => (
                   <li key={offer.brand}><button
@@ -182,12 +155,12 @@ export default function WorldMap() {
                     onBlur={() => setHoveredOffer(null)}
                     aria-pressed={selectedOffer?.brand === offer.brand}
                   >
-                    <span className="brandName"><i />{offer.brand}{selectedCountry && <em>{index === 0 ? "Best match" : `#${index + 1}`}</em>}</span>
-                    <strong>${offer.price.toFixed(2)}</strong>
-                    <small>{offer.product} · {offer.data} · {offer.days}d</small>
+                    <span className="brandName"><i />{offer.brand}{selectedCountry && <em>{`#${index + 1}`}</em>}</span>
+                    <strong>{priceText(offer)}</strong>
+                    <small>{offer.product}</small>
                   </button></li>
                 ))}
-                {!rankedOffers.length && <li className="noOffers">No consumer regional plans found.</li>}
+                {!rankedOffers.length && <li className="noOffers">Select a country to view packages.</li>}
               </ul>
               {!!rankedOffers.length && (
                 <div className="offerNarration" role="status" aria-live="polite">
@@ -238,19 +211,19 @@ export default function WorldMap() {
                   <span><i /> Selected eSIM</span>
                   <h3>{selectedOffer.brand} <small>{selectedOffer.product}</small></h3>
                 </div>
-                <strong>${selectedOffer.price.toFixed(2)}</strong>
+                <strong>{priceText(selectedOffer)}</strong>
               </header>
               <dl>
-                <div><dt>Allowance</dt><dd>{selectedOffer.data}</dd></div>
-                <div><dt>Validity</dt><dd>{selectedOffer.days} days</dd></div>
-                <div><dt>Network</dt><dd>{brandFacts[selectedOffer.brand].network}</dd></div>
+                <div><dt>Allowance</dt><dd>{selectedOffer.dataLabel}</dd></div>
+                <div><dt>Validity</dt><dd>{validityText(selectedOffer)}</dd></div>
+                <div><dt>Network</dt><dd>{selectedOffer.network}</dd></div>
                 <div><dt>Delivery</dt><dd>{brandFacts[selectedOffer.brand].delivery}</dd></div>
                 <div><dt>Activation</dt><dd>{brandFacts[selectedOffer.brand].activation}</dd></div>
                 <div><dt>Included</dt><dd>{brandFacts[selectedOffer.brand].extra}</dd></div>
               </dl>
               <footer>
                 <span>{mapCountries.filter((country) => country.continent === selectedRegion).length} mapped destinations</span>
-                <span>Provider terms apply</span>
+                <a href={selectedOffer.url} target="_blank" rel="noreferrer">{checkedText(selectedOffer)} · View provider ↗</a>
               </footer>
             </article>
           )}
@@ -274,7 +247,7 @@ export default function WorldMap() {
             </div>
 
             <section className="manifestPlans" aria-labelledby="manifest-plans-title">
-              <h4 className="srOnly" id="manifest-plans-title">Regional eSIM plan options</h4>
+              <h4 className="srOnly" id="manifest-plans-title">Country eSIM plan options</h4>
               <ul>
               {rankedOffers.map((offer) => (
                 <li key={offer.brand}><button
@@ -288,13 +261,13 @@ export default function WorldMap() {
                   onBlur={() => setHoveredOffer(null)}
                   aria-pressed={selectedOffer?.brand === offer.brand}
                 >
-                  <span><strong><i />{offer.brand}</strong><small>{offer.product} · {offer.data} / {offer.days}d</small></span>
-                  <b>${offer.price.toFixed(2)}</b>
+                  <span><strong><i />{offer.brand}</strong><small>{offer.product}</small></span>
+                  <b>{priceText(offer)}</b>
                 </button></li>
               ))}
-              {!rankedOffers.length && <li className="noOffers">No comparable consumer offers</li>}
+              {!rankedOffers.length && <li className="noOffers">Select a country to compare prices</li>}
               </ul>
-              <p>{selectedRegion === "EU" ? "Verified provider pricing" : "Marketplace preview · verify before purchase"}</p>
+              <p>Prices use the displayed currency and package terms.</p>
             </section>
 
             <label className="countrySearch">
@@ -319,7 +292,7 @@ export default function WorldMap() {
                 >
                   <span className="countryCode">{country.code}</span>
                   <span>{country.name}</span>
-                  <span className="countryPrice">{countryPrice(country) ? <>from <b>${countryPrice(country)}</b></> : "Coverage check"}</span>
+                  <span className="countryPrice">Compare plans</span>
                   <span className="countryArrow" aria-hidden="true">
                     {selectedCountry?.code === country.code ? "✓" : "⌁"}
                   </span>
@@ -332,8 +305,8 @@ export default function WorldMap() {
               <div className="countryTicket">
                 <span>Selected destination</span>
                 <strong>{selectedCountry.name}</strong>
-                <small>{selectedOffer ? `${selectedOffer.brand} ${selectedOffer.product} · ${selectedOffer.data} · ${selectedOffer.days} days · $${selectedOffer.price.toFixed(2)}` : "No comparable consumer plan found"}</small>
-                {({ FR: "france", IT: "italy", ES: "spain", TR: "turkey", JP: "japan", US: "united-states" })[selectedCountry.code] && <a href={sitePath(`/${({ FR: "france", IT: "italy", ES: "spain", TR: "turkey", JP: "japan", US: "united-states" })[selectedCountry.code]}/`)}>Open the complete {selectedCountry.name} comparison <b aria-hidden="true">⌁</b></a>}
+                <small>{selectedOffer ? `${selectedOffer.brand} ${selectedOffer.product} · ${priceText(selectedOffer)}` : "No comparable consumer plan found"}</small>
+                {destinationByCode[selectedCountry.code]?.slug && <a href={sitePath(`/${destinationByCode[selectedCountry.code]?.slug}/`)}>Open the complete {selectedCountry.name} comparison <b aria-hidden="true">⌁</b></a>}
               </div>
             )}
           </aside>

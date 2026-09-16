@@ -2,6 +2,11 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { destinationRegistry, countryCodesByContinent } from '../app/countryRegistry.js';
 import { countryCoordinates } from '../app/countryCoordinates.js';
+import { hasCurrentPrice, validityText, PRICE_MAX_AGE_DAYS } from '../app/pricePolicy.js';
+
+const prices = JSON.parse(readFileSync('data/provider-prices.json', 'utf8'));
+const providerNames = { saily: 'Saily', airalo: 'Airalo', holafly: 'Holafly', nomad: 'Nomad', alosim: 'aloSIM', jetpac: 'Jetpac' };
+let offersChecked = 0;
 
 const codes = Object.values(countryCodesByContinent).flat();
 assert.equal(codes.length, 195, 'UN country baseline');
@@ -62,6 +67,22 @@ for (const destination of destinationRegistry) {
   assert.ok(!/\$(?:Infinity|NaN)|href="[^"]*undefined/.test(html), `Invalid price or URL: ${file}`);
   const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]));
   assert.ok(schemas.length, `Missing structured data: ${file}`);
+  const services = schemas.flatMap(schema => schema['@graph'] || [])
+    .filter(node => node['@type'] === 'ItemList')
+    .flatMap(node => node.itemListElement || []).map(entry => entry.item);
+  for (const service of services.filter(service => service?.offers)) {
+    const provider = Object.keys(providerNames).find(key => providerNames[key] === service.provider?.name);
+    const records = prices.destinations[destination.slug]?.providers[provider]?.plans || [];
+    const matching = records.find(plan => {
+      const product = `${destination.name} · ${plan.unlimited ? 'Unlimited' : `${plan.data} GB`} · ${validityText(plan)}`;
+      return service.name === `${providerNames[provider]} ${product} eSIM plan`
+        && service.offers.priceCurrency === plan.currency && Number(service.offers.price) === plan.price
+        && service.offers.url === plan.url && plan.countryCode === destination.code && hasCurrentPrice(plan);
+    });
+    assert.ok(matching, `Unmatched structured offer: ${file}: ${service.name}`);
+    assert.equal(service.offers.priceValidUntil, new Date(Date.parse(matching.checkedAt) + PRICE_MAX_AGE_DAYS * 86400000).toISOString().slice(0, 10));
+    offersChecked++;
+  }
   if (html.includes('Provider availability needs confirmation')) {
     planningPages++;
     for (const schema of schemas) assert.ok(!JSON.stringify(schema).includes('"@type":"Offer"'), `Unverified offer schema: ${file}`);
@@ -76,4 +97,4 @@ for (const destination of destinationRegistry) {
   }
 }
 assert.equal(planningPages, 139, '139 new planning guides');
-console.log(`PASS: 195-country baseline, 200 destination pages, 210 sitemap URLs, 139 honest availability states, ${localLinksChecked} internal links, six relevant footer destinations per page, canonical URLs and structured data.`);
+console.log(`PASS: 195-country baseline, 200 destination pages, 210 sitemap URLs, 139 honest availability states, ${localLinksChecked} internal links, ${offersChecked} source-matched structured offers, six relevant footer destinations per page, canonical URLs and structured data.`);

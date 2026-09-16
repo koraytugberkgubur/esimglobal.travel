@@ -783,3 +783,14 @@ h1 { max-width: 1050px; margin: 0; font: 400 clamp(56px, 8.2vw, 112px)/.91 "Iowa
   .footerGuideNav a { display:flex; align-items:center; min-height:44px; }
   .footerBase { gap:6px; }
 }
+
+/* Package-level source details and currency-aware filters. */
+.planSourceNote { display:flex; flex-wrap:wrap; gap:6px 18px; margin:0; padding:10px 16px; color:#58716d; font-size:11px; line-height:1.5; }
+.planSourceNote a { color:inherit; text-underline-offset:3px; }
+.bestPickReasons .planSourceNote { padding:14px 0; }
+.planSelectors { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin:20px 0; }
+.planSelectors label { display:grid; gap:8px; font-size:13px; font-weight:600; }
+.planSelectors select { width:100%; min-height:44px; padding:10px; border:1px solid var(--line); background:var(--paper); color:var(--ink); font:inherit; }
+.showMorePlans { margin-top:18px; min-height:44px; padding:12px 20px; border:1px solid var(--ocean); background:var(--paper); color:var(--ink); cursor:pointer; }
+.planSelectors select:focus-visible,.showMorePlans:focus-visible { outline:2px solid var(--signal); outline-offset:3px; }
+@media(max-width:600px) { .planSelectors { grid-template-columns:1fr; gap:12px; } .planSourceNote { padding:10px 12px; } }

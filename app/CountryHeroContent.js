@@ -1,6 +1,10 @@
+"use client";
+import { validityText } from "./pricePolicy";
+import { usePricePresentation } from "./PriceQuote";
 import { HeadingReadMore } from "./EditorialHeading";
 
 export function HeroQuickAnswer({ country, plan, summary, reason }) {
+  const { priceText, checkedText } = usePricePresentation();
   const headingId = `${country.toLowerCase().replaceAll(" ", "-")}-quick-answer`;
 
   return (
@@ -9,18 +13,18 @@ export function HeroQuickAnswer({ country, plan, summary, reason }) {
       <section className="heroQuickAnswer" aria-labelledby={headingId}>
         <header>
           <span>Quick answer</span>
-          <small>Source checked for most travelers</small>
+          <small>{checkedText(plan)}</small>
         </header>
         <div className="heroQuickAnswerTitle">
-          <h2 id={headingId}>Our {country} pick: {plan.brand}</h2>
-          <strong>${plan.price.toFixed(2)}</strong>
+          <h2 id={headingId}>{country} package: {plan.brand}</h2>
+          <strong>{priceText(plan)}</strong>
         </div>
         <dl aria-label={`${plan.brand} ${country} plan summary`}>
           <div><dt>Data</dt><dd>{plan.dataLabel}</dd></div>
-          <div><dt>Validity</dt><dd>{plan.days} days</dd></div>
+          <div><dt>Validity</dt><dd>{validityText(plan)}</dd></div>
           <div><dt>Network</dt><dd>{plan.network}</dd></div>
         </dl>
-        <p><strong>Why it ranks first:</strong> {reason}</p>
+        <p>Match this allowance, validity and currency when opening the provider’s page. Review other packages below for your trip.</p>
       </section>
       <a href="#plans">Compare {country} plans <span aria-hidden="true">↓</span></a>
     </>

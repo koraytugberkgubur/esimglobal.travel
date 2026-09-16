@@ -10,14 +10,12 @@ const countryProfiles = {
 export function buildCountryFaqGroups({ country, bestPlan, networks, coverage, plans = [] }) {
   const profile = countryProfiles[country] || { places: `major destinations across ${country}`, geography: "cities and populated areas, with possible variation in remote regions", onward: "a neighbouring country", arrival: "before departure while reliable Wi-Fi is available" };
   const displayedPlans = plans.length ? plans : [bestPlan];
-  const publishedPrices = displayedPlans.map((plan) => plan.price).filter(Number.isFinite);
-  const lowestPrice = Math.min(...publishedPrices);
-  const hasUnlimited = displayedPlans.some((plan) => plan.data >= 999);
+  const hasUnlimited = displayedPlans.some((plan) => plan.unlimited);
 
   return [
     { id: "plans", label: "Plans and pricing", summary: "Cost, data and validity", questions: [
-      { number: "01", question: `Which eSIM providers are shown for ${country}?`, answer: `${bestPlan.brand} ${bestPlan.product} is ranked first: ${bestPlan.dataLabel}, ${bestPlan.days} days and a published price of $${bestPlan.price.toFixed(2)}. The comparison also links to ${displayedPlans.slice(1).map((plan) => plan.brand).join(", ")} for live destination availability and pricing.` },
-      { number: "02", question: `What is the verified starting price for a travel eSIM in ${country}?`, answer: `The lowest displayed package price is $${lowestPrice.toFixed(2)}. Saily remains the recommended pick based on its verified destination offer; confirm the final checkout price because taxes, currency and promotions can change.` },
+      { number: "01", question: `Which eSIM providers are shown for ${country}?`, answer: `The comparison includes ${[...new Set(displayedPlans.map(plan=>plan.brand))].join(", ")}. Each package lists its own data allowance, validity, currency and source-check date. A catalogue link without a confirmed price is not a verified offer.` },
+      { number: "02", question: `How do I compare checked eSIM prices for ${country}?`, answer: "Filter the package list by currency, data allowance and validity. Each price belongs to that exact package and shows its source-check date. Old or unconfirmed prices are labelled for rechecking. Verify the final total with the provider; tax, promotions and fair-use terms can differ." },
       { number: "03", question: `How much mobile data is practical for ${profile.places}?`, answer: "For maps, messaging and bookings, 1–3 GB per week may be enough. Frequent social media, video calls, streaming or hotspot use often makes 5–10 GB—or an unlimited option—a safer choice." },
       { number: "04", question: `Can I buy an unlimited-data eSIM for ${country}?`, answer: hasUnlimited ? `Yes. The current comparison includes an unlimited-data option for ${country}. Check its fair-use policy, hotspot allowance and possible speed restrictions before treating “unlimited” as unrestricted use.` : `No unlimited plan is currently shown in this comparison. Provider inventories change, so check the latest offers if unlimited data is essential for your trip.` },
     ] },
@@ -28,7 +26,7 @@ export function buildCountryFaqGroups({ country, bestPlan, networks, coverage, p
     ] },
     { id: "activation", label: "Installation", summary: "Install, start and connect", questions: [
       { number: "08", question: `When is the safest time to install my ${country} eSIM?`, answer: `Install it ${profile.arrival}. Keep the new line disabled for mobile data until the provider’s activation instructions say it is safe to connect.` },
-      { number: "09", question: "When does the displayed Saily plan activate?", answer: "Saily says the plan activates automatically on arrival after the eSIM and data roaming are enabled. If it is not activated earlier, its 30-day activation window can trigger automatic activation." },
+      { number: "09", question: "When does the displayed Saily plan activate?", answer: "Saily says the plan activates automatically on arrival after the eSIM and data roaming are enabled. Check the activation deadline on the specific package before purchase." },
       { number: "10", question: `Can I wait until I arrive in ${country} to connect it?`, answer: "Yes. Saily recommends installing before departure on reliable Wi-Fi, then enabling the eSIM and data roaming so the plan can connect automatically after arrival." },
     ] },
     { id: "usage", label: "Calls and usage", summary: "Number, hotspot and top-ups", questions: [

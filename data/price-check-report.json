@@ -1,0 +1,2260 @@
+{
+  "checkedAt": "2026-09-16T22:56:08.565Z",
+  "results": [
+    {
+      "slug": "algeria",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "algeria",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "algeria",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "algeria",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "algeria",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "argentina",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "argentina",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "argentina",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "argentina",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "argentina",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "australia",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "australia",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "australia",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "australia",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "australia",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "austria",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "austria",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "austria",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "austria",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "austria",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "bolivia",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "bolivia",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "bolivia",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "bolivia",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "bolivia",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "brazil",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "brazil",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "brazil",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "brazil",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 22
+    },
+    {
+      "slug": "brazil",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "canada",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "canada",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 32
+    },
+    {
+      "slug": "canada",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "canada",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 23
+    },
+    {
+      "slug": "canada",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "chile",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "chile",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "chile",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "chile",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "chile",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 7
+    },
+    {
+      "slug": "china",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "china",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "china",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "china",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 24
+    },
+    {
+      "slug": "china",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "colombia",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "colombia",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "colombia",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "colombia",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "colombia",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "costa-rica",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "costa-rica",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "costa-rica",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "costa-rica",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "costa-rica",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 7
+    },
+    {
+      "slug": "dominican-republic",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "dominican-republic",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "dominican-republic",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "dominican-republic",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "dominican-republic",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "ecuador",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "ecuador",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "ecuador",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "ecuador",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "ecuador",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "egypt",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "egypt",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "egypt",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "egypt",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "egypt",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "el-salvador",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "el-salvador",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "el-salvador",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "el-salvador",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "el-salvador",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "fiji",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "fiji",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "fiji",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "fiji",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "fiji",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "france",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "france",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "france",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "france",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "france",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "french-polynesia",
+      "provider": "airalo",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "french-polynesia",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "french-polynesia",
+      "provider": "holafly",
+      "status": "needs-review",
+      "reason": "Unknown package allowance"
+    },
+    {
+      "slug": "french-polynesia",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "french-polynesia",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 3
+    },
+    {
+      "slug": "germany",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "germany",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "germany",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "germany",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "germany",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "ghana",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "ghana",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "ghana",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "ghana",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "ghana",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "greece",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "greece",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "greece",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "greece",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "greece",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "guam",
+      "provider": "airalo",
+      "status": "needs-review",
+      "reason": "No matching packages found"
+    },
+    {
+      "slug": "guam",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "guam",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "guam",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "guam",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "guatemala",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "guatemala",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "guatemala",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "guatemala",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "guatemala",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "guyana",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "guyana",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "guyana",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "guyana",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "guyana",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "honduras",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "honduras",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "honduras",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "honduras",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "honduras",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "india",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "india",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "india",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "india",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 24
+    },
+    {
+      "slug": "india",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "indonesia",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "indonesia",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "indonesia",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "indonesia",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 24
+    },
+    {
+      "slug": "indonesia",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "italy",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "italy",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "italy",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "italy",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "italy",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "jamaica",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "jamaica",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "jamaica",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "jamaica",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "jamaica",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "japan",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "japan",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 32
+    },
+    {
+      "slug": "japan",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "japan",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 24
+    },
+    {
+      "slug": "japan",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "malaysia",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "malaysia",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "malaysia",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "malaysia",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "malaysia",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "mauritius",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "mauritius",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "mauritius",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "mauritius",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "mauritius",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "mexico",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "mexico",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "mexico",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "mexico",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 22
+    },
+    {
+      "slug": "mexico",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "morocco",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "morocco",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "morocco",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "morocco",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "morocco",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "mozambique",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "mozambique",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "mozambique",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "mozambique",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "mozambique",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "nauru",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 3
+    },
+    {
+      "slug": "nauru",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 1
+    },
+    {
+      "slug": "nauru",
+      "provider": "holafly",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "nauru",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "nauru",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 3
+    },
+    {
+      "slug": "netherlands",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "netherlands",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "netherlands",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "netherlands",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "netherlands",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "new-zealand",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "new-zealand",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "new-zealand",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "new-zealand",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 16
+    },
+    {
+      "slug": "new-zealand",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "nigeria",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "nigeria",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "nigeria",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "nigeria",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "nigeria",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "northern-mariana-islands",
+      "provider": "airalo",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "northern-mariana-islands",
+      "provider": "alosim",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "northern-mariana-islands",
+      "provider": "holafly",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "northern-mariana-islands",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "northern-mariana-islands",
+      "provider": "nomad",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "panama",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "panama",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "panama",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "panama",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "panama",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 7
+    },
+    {
+      "slug": "papua-new-guinea",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "papua-new-guinea",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "papua-new-guinea",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "papua-new-guinea",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "papua-new-guinea",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "paraguay",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "paraguay",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "paraguay",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "paraguay",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "paraguay",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "peru",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "peru",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "peru",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "peru",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "peru",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "portugal",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "portugal",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "portugal",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "portugal",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "portugal",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "rwanda",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "rwanda",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "rwanda",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "rwanda",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "rwanda",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "samoa",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "samoa",
+      "provider": "alosim",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "samoa",
+      "provider": "holafly",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "samoa",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "samoa",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "singapore",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "singapore",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "singapore",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "singapore",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "singapore",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "south-africa",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "south-africa",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "south-africa",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "south-africa",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "south-africa",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 7
+    },
+    {
+      "slug": "south-korea",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "south-korea",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "south-korea",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "south-korea",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 24
+    },
+    {
+      "slug": "south-korea",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "spain",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "spain",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "spain",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "spain",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "spain",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "switzerland",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "switzerland",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "switzerland",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "switzerland",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 15
+    },
+    {
+      "slug": "switzerland",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 10
+    },
+    {
+      "slug": "tanzania",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "tanzania",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "tanzania",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "tanzania",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "tanzania",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "thailand",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "thailand",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "thailand",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "thailand",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 23
+    },
+    {
+      "slug": "thailand",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 7
+    },
+    {
+      "slug": "tonga",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "tonga",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 2
+    },
+    {
+      "slug": "tonga",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 8
+    },
+    {
+      "slug": "tonga",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "tonga",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 4
+    },
+    {
+      "slug": "turkey",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "turkey",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "turkey",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "turkey",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 16
+    },
+    {
+      "slug": "turkey",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 7
+    },
+    {
+      "slug": "united-arab-emirates",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "united-arab-emirates",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "united-arab-emirates",
+      "provider": "holafly",
+      "status": "needs-review",
+      "reason": "Holafly package variants missing"
+    },
+    {
+      "slug": "united-arab-emirates",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "united-arab-emirates",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 9
+    },
+    {
+      "slug": "united-kingdom",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "united-kingdom",
+      "provider": "alosim",
+      "status": "needs-review",
+      "reason": "HTTP 404"
+    },
+    {
+      "slug": "united-kingdom",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "united-kingdom",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 24
+    },
+    {
+      "slug": "united-kingdom",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 14
+    },
+    {
+      "slug": "united-states",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "united-states",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 31
+    },
+    {
+      "slug": "united-states",
+      "provider": "holafly",
+      "status": "needs-review",
+      "reason": "Holafly package variants missing"
+    },
+    {
+      "slug": "united-states",
+      "provider": "jetpac",
+      "status": "needs-review",
+      "reason": "Jetpac destination mismatch"
+    },
+    {
+      "slug": "united-states",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "uruguay",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 17
+    },
+    {
+      "slug": "uruguay",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "uruguay",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "uruguay",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 13
+    },
+    {
+      "slug": "uruguay",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 5
+    },
+    {
+      "slug": "vietnam",
+      "provider": "airalo",
+      "status": "matched",
+      "plans": 18
+    },
+    {
+      "slug": "vietnam",
+      "provider": "alosim",
+      "status": "matched",
+      "plans": 12
+    },
+    {
+      "slug": "vietnam",
+      "provider": "holafly",
+      "status": "matched",
+      "plans": 11
+    },
+    {
+      "slug": "vietnam",
+      "provider": "jetpac",
+      "status": "matched",
+      "plans": 24
+    },
+    {
+      "slug": "vietnam",
+      "provider": "nomad",
+      "status": "matched",
+      "plans": 6
+    },
+    {
+      "slug": "france",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:41:19.451Z",
+      "plans": 5
+    },
+    {
+      "slug": "italy",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:41:19.776Z",
+      "plans": 5
+    },
+    {
+      "slug": "spain",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:17.909Z",
+      "plans": 5
+    },
+    {
+      "slug": "germany",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:41:21.468Z",
+      "plans": 5
+    },
+    {
+      "slug": "united-kingdom",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:17.478Z",
+      "plans": 5
+    },
+    {
+      "slug": "portugal",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:18.010Z",
+      "plans": 5
+    },
+    {
+      "slug": "greece",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:41:23.858Z",
+      "plans": 5
+    },
+    {
+      "slug": "netherlands",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:41:23.593Z",
+      "plans": 5
+    },
+    {
+      "slug": "switzerland",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:19.506Z",
+      "plans": 5
+    },
+    {
+      "slug": "austria",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:19.664Z",
+      "plans": 5
+    },
+    {
+      "slug": "japan",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:20.134Z",
+      "plans": 5
+    },
+    {
+      "slug": "china",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:41:25.792Z",
+      "plans": 5
+    },
+    {
+      "slug": "india",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:42:28.676Z",
+      "plans": 5
+    },
+    {
+      "slug": "thailand",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:21.866Z",
+      "plans": 5
+    },
+    {
+      "slug": "indonesia",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:42:28.449Z",
+      "plans": 5
+    },
+    {
+      "slug": "vietnam",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:42:31.003Z",
+      "plans": 5
+    },
+    {
+      "slug": "south-korea",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:42:30.905Z",
+      "plans": 5
+    },
+    {
+      "slug": "singapore",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:42:30.734Z",
+      "plans": 5
+    },
+    {
+      "slug": "malaysia",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:42:33.064Z",
+      "plans": 5
+    },
+    {
+      "slug": "united-arab-emirates",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:22.266Z",
+      "plans": 5
+    },
+    {
+      "slug": "turkey",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:21.662Z",
+      "plans": 5
+    },
+    {
+      "slug": "egypt",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:24.504Z",
+      "plans": 5
+    },
+    {
+      "slug": "morocco",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:23.880Z",
+      "plans": 5
+    },
+    {
+      "slug": "south-africa",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:23.747Z",
+      "plans": 5
+    },
+    {
+      "slug": "ghana",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:26.015Z",
+      "plans": 3
+    },
+    {
+      "slug": "nigeria",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:26.678Z",
+      "plans": 4
+    },
+    {
+      "slug": "algeria",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:26.213Z",
+      "plans": 4
+    },
+    {
+      "slug": "tanzania",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:28.125Z",
+      "plans": 5
+    },
+    {
+      "slug": "rwanda",
+      "provider": "saily",
+      "status": "needs-review",
+      "reason": "No manually confirmed package"
+    },
+    {
+      "slug": "mauritius",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:28.826Z",
+      "plans": 4
+    },
+    {
+      "slug": "mozambique",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:20.012Z",
+      "plans": 4
+    },
+    {
+      "slug": "united-states",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:20.596Z",
+      "plans": 5
+    },
+    {
+      "slug": "canada",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:20.303Z",
+      "plans": 5
+    },
+    {
+      "slug": "mexico",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:44:07.615Z",
+      "plans": 5
+    },
+    {
+      "slug": "costa-rica",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:22.560Z",
+      "plans": 5
+    },
+    {
+      "slug": "panama",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:44:07.172Z",
+      "plans": 4
+    },
+    {
+      "slug": "guatemala",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:44:09.289Z",
+      "plans": 3
+    },
+    {
+      "slug": "dominican-republic",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:22.126Z",
+      "plans": 4
+    },
+    {
+      "slug": "jamaica",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:23.386Z",
+      "plans": 4
+    },
+    {
+      "slug": "el-salvador",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:44:11.068Z",
+      "plans": 4
+    },
+    {
+      "slug": "honduras",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:44:11.456Z",
+      "plans": 4
+    },
+    {
+      "slug": "brazil",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:25.058Z",
+      "plans": 5
+    },
+    {
+      "slug": "argentina",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:25.382Z",
+      "plans": 5
+    },
+    {
+      "slug": "chile",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:24.922Z",
+      "plans": 5
+    },
+    {
+      "slug": "colombia",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:44:13.040Z",
+      "plans": 5
+    },
+    {
+      "slug": "peru",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:27.034Z",
+      "plans": 5
+    },
+    {
+      "slug": "uruguay",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:44:15.396Z",
+      "plans": 5
+    },
+    {
+      "slug": "ecuador",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:47:27.733Z",
+      "plans": 4
+    },
+    {
+      "slug": "bolivia",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:45:58.557Z",
+      "plans": 4
+    },
+    {
+      "slug": "paraguay",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:45:58.272Z",
+      "plans": 5
+    },
+    {
+      "slug": "guyana",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:45:58.061Z",
+      "plans": 4
+    },
+    {
+      "slug": "australia",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:00.202Z",
+      "plans": 5
+    },
+    {
+      "slug": "new-zealand",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:00.271Z",
+      "plans": 5
+    },
+    {
+      "slug": "fiji",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:00.409Z",
+      "plans": 3
+    },
+    {
+      "slug": "papua-new-guinea",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:01.875Z",
+      "plans": 4
+    },
+    {
+      "slug": "tonga",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:02.306Z",
+      "plans": 3
+    },
+    {
+      "slug": "nauru",
+      "provider": "saily",
+      "status": "needs-review",
+      "reason": "No manually confirmed package"
+    },
+    {
+      "slug": "samoa",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:03.966Z",
+      "plans": 4
+    },
+    {
+      "slug": "guam",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:04.247Z",
+      "plans": 4
+    },
+    {
+      "slug": "french-polynesia",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:03.840Z",
+      "plans": 2
+    },
+    {
+      "slug": "northern-mariana-islands",
+      "provider": "saily",
+      "status": "manual-review",
+      "checkedAt": "2026-09-16T22:46:05.803Z",
+      "plans": 3
+    }
+  ]
+}

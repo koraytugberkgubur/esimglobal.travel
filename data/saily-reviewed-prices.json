@@ -1,0 +1,2061 @@
+{
+  "france": {
+    "code": "FR",
+    "sourceUrl": "https://saily.com/es-419/esim-france/",
+    "checkedAt": "2026-09-16T22:41:19.451Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 10.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 16.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 22.99
+      }
+    ]
+  },
+  "italy": {
+    "code": "IT",
+    "sourceUrl": "https://saily.com/es-419/esim-italy/",
+    "checkedAt": "2026-09-16T22:41:19.776Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 12.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 20.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 28.99
+      }
+    ]
+  },
+  "spain": {
+    "code": "ES",
+    "sourceUrl": "https://saily.com/es-419/esim-spain/",
+    "checkedAt": "2026-09-16T22:46:17.909Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 5.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 8.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 13.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 20.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "germany": {
+    "code": "DE",
+    "sourceUrl": "https://saily.com/es-419/esim-germany/",
+    "checkedAt": "2026-09-16T22:41:21.468Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.49
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 10.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 16.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 22.99
+      }
+    ]
+  },
+  "united-kingdom": {
+    "code": "GB",
+    "sourceUrl": "https://saily.com/es-419/esim-united-kingdom/",
+    "checkedAt": "2026-09-16T22:46:17.478Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 7.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 11.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 16.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 27.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "portugal": {
+    "code": "PT",
+    "sourceUrl": "https://saily.com/es-419/esim-portugal/",
+    "checkedAt": "2026-09-16T22:46:18.010Z",
+    "method": "official-page-review",
+    "currency": "CHF",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 6.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 8.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 13.99,
+        "currency": "CHF"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 22.99,
+        "currency": "CHF"
+      }
+    ]
+  },
+  "greece": {
+    "code": "GR",
+    "sourceUrl": "https://saily.com/es-419/esim-greece/",
+    "checkedAt": "2026-09-16T22:41:23.858Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.49
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 9.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 13.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 22.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 35.99
+      }
+    ]
+  },
+  "netherlands": {
+    "code": "NL",
+    "sourceUrl": "https://saily.com/es-419/esim-netherlands/",
+    "checkedAt": "2026-09-16T22:41:23.593Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 7.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 9.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 17.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 26.99
+      }
+    ]
+  },
+  "switzerland": {
+    "code": "CH",
+    "sourceUrl": "https://saily.com/es-419/esim-switzerland/",
+    "checkedAt": "2026-09-16T22:46:19.506Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 12.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 20.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 32.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "austria": {
+    "code": "AT",
+    "sourceUrl": "https://saily.com/es-419/esim-austria/",
+    "checkedAt": "2026-09-16T22:46:19.664Z",
+    "method": "official-page-review",
+    "currency": "CHF",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 1.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 4.99,
+        "currency": "CHF"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 6.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 8.99,
+        "currency": "CHF"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 13.49,
+        "currency": "CHF"
+      }
+    ]
+  },
+  "japan": {
+    "code": "JP",
+    "sourceUrl": "https://saily.com/es-419/esim-japan/",
+    "checkedAt": "2026-09-16T22:46:20.134Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 6.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 9.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 15.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 21.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "china": {
+    "code": "CN",
+    "sourceUrl": "https://saily.com/es-419/esim-china/",
+    "checkedAt": "2026-09-16T22:41:25.792Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.49
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 10.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 15.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 26.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 39.99
+      }
+    ]
+  },
+  "india": {
+    "code": "IN",
+    "sourceUrl": "https://saily.com/es-419/esim-india/",
+    "checkedAt": "2026-09-16T22:42:28.676Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 9.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 13.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 23.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 38.99
+      }
+    ]
+  },
+  "thailand": {
+    "code": "TH",
+    "sourceUrl": "https://saily.com/es-419/esim-thailand/",
+    "checkedAt": "2026-09-16T22:46:21.866Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 2.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 5.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 6.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 9.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 17.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "indonesia": {
+    "code": "ID",
+    "sourceUrl": "https://saily.com/es-419/esim-indonesia/",
+    "checkedAt": "2026-09-16T22:42:28.449Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.79
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 13.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 21.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 35.99
+      }
+    ]
+  },
+  "vietnam": {
+    "code": "VN",
+    "sourceUrl": "https://saily.com/es-419/esim-vietnam/",
+    "checkedAt": "2026-09-16T22:42:31.003Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 7.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 10.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 17.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 28.99
+      }
+    ]
+  },
+  "south-korea": {
+    "code": "KR",
+    "sourceUrl": "https://saily.com/es-419/esim-south-korea/",
+    "checkedAt": "2026-09-16T22:42:30.905Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 10.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 18.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 29.99
+      }
+    ]
+  },
+  "singapore": {
+    "code": "SG",
+    "sourceUrl": "https://saily.com/es-419/esim-singapore/",
+    "checkedAt": "2026-09-16T22:42:30.734Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 6.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 9.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 15.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 22.99
+      }
+    ]
+  },
+  "malaysia": {
+    "code": "MY",
+    "sourceUrl": "https://saily.com/es-419/esim-malaysia/",
+    "checkedAt": "2026-09-16T22:42:33.064Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 12.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 21.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 35.99
+      }
+    ]
+  },
+  "united-arab-emirates": {
+    "code": "AE",
+    "sourceUrl": "https://saily.com/es-419/esim-united-arab-emirates/",
+    "checkedAt": "2026-09-16T22:46:22.266Z",
+    "method": "official-page-review",
+    "currency": "CHF",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 9.99,
+        "currency": "CHF"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 16.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 27.99,
+        "currency": "CHF"
+      }
+    ]
+  },
+  "turkey": {
+    "code": "TR",
+    "sourceUrl": "https://saily.com/es-419/esim-turkey/",
+    "checkedAt": "2026-09-16T22:46:21.662Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 5.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 8.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 13.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 20.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "egypt": {
+    "code": "EG",
+    "sourceUrl": "https://saily.com/es-419/esim-egypt/",
+    "checkedAt": "2026-09-16T22:46:24.504Z",
+    "method": "official-page-review",
+    "currency": "CHF",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 12.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 16.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 27.99,
+        "currency": "CHF"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 35.49,
+        "currency": "CHF"
+      }
+    ]
+  },
+  "morocco": {
+    "code": "MA",
+    "sourceUrl": "https://saily.com/es-419/esim-morocco/",
+    "checkedAt": "2026-09-16T22:46:23.880Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 13.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 19.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 30.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 38.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "south-africa": {
+    "code": "ZA",
+    "sourceUrl": "https://saily.com/es-419/esim-south-africa/",
+    "checkedAt": "2026-09-16T22:46:23.747Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 11.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 20.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 32.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "ghana": {
+    "code": "GH",
+    "sourceUrl": "https://saily.com/es-419/esim-ghana/",
+    "checkedAt": "2026-09-16T22:46:26.015Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 5.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 11.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 16.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "nigeria": {
+    "code": "NG",
+    "sourceUrl": "https://saily.com/es-419/esim-nigeria/",
+    "checkedAt": "2026-09-16T22:46:26.678Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 6.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 16.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 26.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 43.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "algeria": {
+    "code": "DZ",
+    "sourceUrl": "https://saily.com/es-419/esim-algeria/",
+    "checkedAt": "2026-09-16T22:46:26.213Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 13.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 21.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 37.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "tanzania": {
+    "code": "TZ",
+    "sourceUrl": "https://saily.com/es-419/esim-tanzania/",
+    "checkedAt": "2026-09-16T22:46:28.125Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 10.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 14.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 25.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 39.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "rwanda": {
+    "code": "RW",
+    "sourceUrl": "https://saily.com/es-419/esim-rwanda/",
+    "checkedAt": "2026-09-16T22:46:28.351Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": []
+  },
+  "mauritius": {
+    "code": "MU",
+    "sourceUrl": "https://saily.com/es-419/esim-mauritius/",
+    "checkedAt": "2026-09-16T22:46:28.826Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 6.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 16.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 26.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 40.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "mozambique": {
+    "code": "MZ",
+    "sourceUrl": "https://saily.com/es-419/esim-mozambique/",
+    "checkedAt": "2026-09-16T22:47:20.012Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 5.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 12.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 18.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 30.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "united-states": {
+    "code": "US",
+    "sourceUrl": "https://saily.com/es-419/esim-united-states/",
+    "checkedAt": "2026-09-16T22:47:20.596Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 7.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 12.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 20.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 32.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "canada": {
+    "code": "CA",
+    "sourceUrl": "https://saily.com/es-419/esim-canada/",
+    "checkedAt": "2026-09-16T22:47:20.303Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 11.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 15.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 27.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 38.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "mexico": {
+    "code": "MX",
+    "sourceUrl": "https://saily.com/es-419/esim-mexico/",
+    "checkedAt": "2026-09-16T22:44:07.615Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 9.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 14.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 23.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 37.99
+      }
+    ]
+  },
+  "costa-rica": {
+    "code": "CR",
+    "sourceUrl": "https://saily.com/es-419/esim-costa-rica/",
+    "checkedAt": "2026-09-16T22:47:22.560Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 6.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 16.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 23.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 32.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 42.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "panama": {
+    "code": "PA",
+    "sourceUrl": "https://saily.com/es-419/esim-panama/",
+    "checkedAt": "2026-09-16T22:44:07.172Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 19.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 29.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 39.99
+      }
+    ]
+  },
+  "guatemala": {
+    "code": "GT",
+    "sourceUrl": "https://saily.com/es-419/esim-guatemala/",
+    "checkedAt": "2026-09-16T22:44:09.289Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 5.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 16.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 24.99
+      }
+    ]
+  },
+  "dominican-republic": {
+    "code": "DO",
+    "sourceUrl": "https://saily.com/es-419/esim-dominican-republic/",
+    "checkedAt": "2026-09-16T22:47:22.126Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 18.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 23.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 33.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "jamaica": {
+    "code": "JM",
+    "sourceUrl": "https://saily.com/es-419/esim-jamaica/",
+    "checkedAt": "2026-09-16T22:47:23.386Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 16.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 25.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 35.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "el-salvador": {
+    "code": "SV",
+    "sourceUrl": "https://saily.com/es-419/esim-el-salvador/",
+    "checkedAt": "2026-09-16T22:44:11.068Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 5.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 15.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 24.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 34.99
+      }
+    ]
+  },
+  "honduras": {
+    "code": "HN",
+    "sourceUrl": "https://saily.com/es-419/esim-honduras/",
+    "checkedAt": "2026-09-16T22:44:11.456Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 6.29
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 14.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 23.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 38.99
+      }
+    ]
+  },
+  "brazil": {
+    "code": "BR",
+    "sourceUrl": "https://saily.com/es-419/esim-brazil/",
+    "checkedAt": "2026-09-16T22:47:25.058Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 12.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 21.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 35.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "argentina": {
+    "code": "AR",
+    "sourceUrl": "https://saily.com/es-419/esim-argentina/",
+    "checkedAt": "2026-09-16T22:47:25.382Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 8.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 14.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 26.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 41.99,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "chile": {
+    "code": "CL",
+    "sourceUrl": "https://saily.com/es-419/esim-chile/",
+    "checkedAt": "2026-09-16T22:47:24.922Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 10.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 15.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 24.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 43.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "colombia": {
+    "code": "CO",
+    "sourceUrl": "https://saily.com/es-419/esim-colombia/",
+    "checkedAt": "2026-09-16T22:44:13.040Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 12.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 16.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 29.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 40.99
+      }
+    ]
+  },
+  "peru": {
+    "code": "PE",
+    "sourceUrl": "https://saily.com/es-419/esim-peru/",
+    "checkedAt": "2026-09-16T22:47:27.034Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 9.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 15.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 26.49,
+        "currency": "EUR"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 36.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "uruguay": {
+    "code": "UY",
+    "sourceUrl": "https://saily.com/es-419/esim-uruguay/",
+    "checkedAt": "2026-09-16T22:44:15.396Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 19.99
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 31.99
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 42.99
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 56.99
+      }
+    ]
+  },
+  "ecuador": {
+    "code": "EC",
+    "sourceUrl": "https://saily.com/es-419/esim-ecuador/",
+    "checkedAt": "2026-09-16T22:47:27.733Z",
+    "method": "official-page-review",
+    "currency": "CHF",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.99,
+        "currency": "CHF"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 13.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 20.49,
+        "currency": "CHF"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 28.99,
+        "currency": "CHF"
+      }
+    ]
+  },
+  "bolivia": {
+    "code": "BO",
+    "sourceUrl": "https://saily.com/es-419/esim-bolivia/",
+    "checkedAt": "2026-09-16T22:45:58.557Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 20.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 28.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 38.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "paraguay": {
+    "code": "PY",
+    "sourceUrl": "https://saily.com/es-419/esim-paraguay/",
+    "checkedAt": "2026-09-16T22:45:58.272Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.49,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 18.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 29.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 48.99,
+        "currency": "USD"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 66.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "guyana": {
+    "code": "GY",
+    "sourceUrl": "https://saily.com/es-419/esim-guyana/",
+    "checkedAt": "2026-09-16T22:45:58.061Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 6.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 17.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 27.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 45.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "australia": {
+    "code": "AU",
+    "sourceUrl": "https://saily.com/es-419/esim-australia/",
+    "checkedAt": "2026-09-16T22:46:00.202Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 7.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 10.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 17.99,
+        "currency": "USD"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 29.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "new-zealand": {
+    "code": "NZ",
+    "sourceUrl": "https://saily.com/es-419/esim-new-zealand/",
+    "checkedAt": "2026-09-16T22:46:00.271Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 3.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 9.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 13.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 23.99,
+        "currency": "USD"
+      },
+      {
+        "data": 20,
+        "days": 30,
+        "price": 37.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "fiji": {
+    "code": "FJ",
+    "sourceUrl": "https://saily.com/es-419/esim-fiji/",
+    "checkedAt": "2026-09-16T22:46:00.409Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 19.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 29.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "papua-new-guinea": {
+    "code": "PG",
+    "sourceUrl": "https://saily.com/es-419/esim-papua-new-guinea/",
+    "checkedAt": "2026-09-16T22:46:01.875Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 6.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 16.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 26.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 42.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "tonga": {
+    "code": "TO",
+    "sourceUrl": "https://saily.com/es-419/esim-tonga/",
+    "checkedAt": "2026-09-16T22:46:02.306Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 4.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 12.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 18.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "nauru": {
+    "code": "NR",
+    "sourceUrl": "https://saily.com/es-419/esim-nauru/",
+    "checkedAt": "2026-09-16T22:46:02.017Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": []
+  },
+  "samoa": {
+    "code": "WS",
+    "sourceUrl": "https://saily.com/es-419/esim-samoa/",
+    "checkedAt": "2026-09-16T22:46:03.966Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 6.29,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 14.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 23.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 41.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "guam": {
+    "code": "GU",
+    "sourceUrl": "https://saily.com/es-419/esim-guam/",
+    "checkedAt": "2026-09-16T22:46:04.247Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 24.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 35.99,
+        "currency": "USD"
+      },
+      {
+        "data": 10,
+        "days": 30,
+        "price": 48.99,
+        "currency": "USD"
+      }
+    ]
+  },
+  "french-polynesia": {
+    "code": "PF",
+    "sourceUrl": "https://saily.com/es-419/esim-french-polynesia/",
+    "checkedAt": "2026-09-16T22:46:03.840Z",
+    "method": "official-page-review",
+    "currency": "EUR",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 13.99,
+        "currency": "EUR"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 35.49,
+        "currency": "EUR"
+      }
+    ]
+  },
+  "northern-mariana-islands": {
+    "code": "MP",
+    "sourceUrl": "https://saily.com/es-419/esim-northern-mariana-islands/",
+    "checkedAt": "2026-09-16T22:46:05.803Z",
+    "method": "official-page-review",
+    "currency": "USD",
+    "plans": [
+      {
+        "data": 1,
+        "days": 7,
+        "price": 7.99,
+        "currency": "USD"
+      },
+      {
+        "data": 3,
+        "days": 30,
+        "price": 24.99,
+        "currency": "USD"
+      },
+      {
+        "data": 5,
+        "days": 30,
+        "price": 35.99,
+        "currency": "USD"
+      }
+    ]
+  }
+}

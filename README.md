@@ -47,3 +47,42 @@ The homepage layout and map have been restored to their version before the count
 expansion. The 200 country pages and 210 sitemap entries are retained. Country
 breadcrumb menus provide links to all guides in the corresponding continent.
 `app/regionalChecks.js` supplies regional guidance for the planning pages.
+
+## Provider price checks
+
+Prices are checked snapshots of exact destination packages. `data/provider-prices.json`
+records the source URL, source-check timestamp, package identity, country, allowance,
+validity, native currency and total price. The map, comparison pages and Offer schema
+use these same records. No exchange-rate conversion or regional-price substitution
+is used. Budget filters require a single currency; unlimited data is kept separate
+from fixed allowances and includes provider fair-use notes where available.
+
+GitHub Pages deployments fetch the official Airalo, Holafly, Nomad, aloSIM and Jetpac
+catalogues and match their product records before building. The manually triggered
+**Check provider prices** workflow performs the same check and saves the snapshot
+and report as a seven-day artifact, without deploying it.
+
+Saily currently blocks the automated collector with HTTP 403. Its fixed-data prices
+come from reviewed official tables in `data/saily-reviewed-prices.json`, including
+the currency displayed by that source. Updating these requires reviewing the official
+country page and recording the exact terms and actual review timestamp. The automated
+refresh does **not** advance Saily's review dates. Unlimited Saily packages are omitted
+until their duration can be verified. Unconfirmed sources remain provider links with
+no price or Offer markup.
+
+All quotes expire after seven days. The client checks the current time on load and
+each minute, replacing expired prices with “Check provider price”; their original
+check dates remain visible. Offer markup includes a matching expiry date. A fetch
+failure never refreshes an old timestamp. A successful response that cannot be
+matched, or a removed page, invalidates that provider's stored offers.
+
+```bash
+npm run test:prices
+npm run prices:refresh -- --fetch
+# Or parse a saved collector output directory:
+npm run prices:refresh -- --source-dir=/path/to/source-directory
+```
+
+Inspect `data/price-check-report.json` for checks requiring review. Parser tests use
+synthetic packages rather than pinning a provider's changing live price. Static-export
+verification checks every structured offer against the matched source package.

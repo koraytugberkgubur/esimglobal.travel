@@ -1,3 +1,4 @@
+import { primaryPlan } from "../pricePolicy";
 import CountryPlanningGuide from "../CountryPlanningGuide";
 import { notFound } from "next/navigation";
 import { countryPages, countrySlugs } from "../countryPages";
@@ -82,21 +83,21 @@ export default async function CountryPage({ params }) {
       >
         <div className="franceHeroCopy">
           <span className="countryEmojiFlag" role="img" aria-label={`Flag of ${destination.name}`}>{destination.flag}</span>
-          <p className="routeKicker">{destination.name.toUpperCase()} ESIM COMPARISON / UPDATED <time dateTime="2026-08-12">AUGUST 2026</time></p>
+          <p className="routeKicker">{destination.name.toUpperCase()} ESIM COMPARISON / PACKAGE PRICES CHECKED INDIVIDUALLY</p>
           <h1 id={heroTitleId}><HeadingSignal />Find the best eSIM for {destination.name}.</h1>
-          <HeroQuickAnswer country={destination.name} plan={destination.plans[0]} summary={destination.heroSummary} reason={destination.pickReason} />
+          <HeroQuickAnswer country={destination.name} plan={primaryPlan(destination.plans)} summary={destination.heroSummary} />
         </div>
         <figure className="franceVisual genericCountryVisual" data-code={destination.code}>
           <figcaption className="srOnly">{destination.heroAlt}</figcaption>
           <div className="parisStamp" aria-label={`${destination.city}, ${destination.name}`}><span>{destination.city.slice(0, 3).toUpperCase()}</span><strong>{destination.code}</strong><small>{destination.region}</small></div>
           <div className="countrySignal" aria-hidden="true"><i /><i /><i /><i /></div>
-          <HeroArrivalBrief country={destination.name} networks={destination.networks} coverage={destination.coverage} network={destination.plans[0].network} titleId={`${country}-arrival-title`} />
+          <HeroArrivalBrief country={destination.name} networks={destination.networks} coverage={destination.coverage} network={primaryPlan(destination.plans).network} titleId={`${country}-arrival-title`} />
           <span className="routeLabel">{destination.airport} → Connected</span>
         </figure>
         <HeroPlanStrip country={destination.name} plans={destination.plans} />
       </section>
 
-      <FrancePlans country={destination.name} plans={destination.plans} sourceUrl={destination.sourceUrl} sourceChecked={destination.sourceChecked} />
+      <FrancePlans country={destination.name} plans={destination.plans} />
 
       <section className="franceEssentials" id="country-essentials" aria-labelledby={essentialsTitleId}>
         <div><p className="routeKicker">BEFORE YOU CONNECT</p><h2 id={essentialsTitleId}><HeadingSignal />Using a travel eSIM in {destination.name}</h2><HeadingReadMore href="#country-faq" label="Read the FAQs">Review local operators, expected coverage and the safest time to install and activate your travel eSIM.</HeadingReadMore></div>
@@ -105,7 +106,7 @@ export default async function CountryPage({ params }) {
 
       <section className="franceFaq" id="country-faq" aria-labelledby={faqId}>
         <header><div><p className="routeKicker">{destination.name.toUpperCase()} ESIM FAQ</p><h2 id={faqId}><HeadingSignal />Questions before you connect</h2><HeadingReadMore href="#related-destinations" label="More destinations">Check plan choice, setup, calls, hotspot use and regional coverage before purchasing.</HeadingReadMore></div><span>18 practical answers</span></header>
-        <CountryFaqTabs country={destination.name} bestPlan={destination.plans[0]} networks={destination.networks} coverage={destination.coverage} plans={destination.plans} />
+        <CountryFaqTabs country={destination.name} bestPlan={primaryPlan(destination.plans)} networks={destination.networks} coverage={destination.coverage} plans={destination.plans} />
       </section>
       <RelatedCountryGuides currentCountry={destination.name} currentRegion={destination.region} />
       </article></main>

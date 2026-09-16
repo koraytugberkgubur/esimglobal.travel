@@ -6,6 +6,8 @@ on:
     branches: [codex/provider-price-checking]
     paths:
       - scripts/collect-provider-pages.mjs
+      - scripts/provider-price-parsers.mjs
+      - scripts/refresh-provider-prices.mjs
       - .github/workflows/check-provider-prices.yml
 
 permissions:
@@ -20,10 +22,14 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-      - name: Collect official product pages
-        run: node scripts/collect-provider-pages.mjs
+      - run: npm ci
+      - run: npm run test:prices
+      - name: Match official product prices
+        run: npm run prices:refresh -- --fetch
       - uses: actions/upload-artifact@v4
         with:
-          name: provider-price-sources
-          path: price-check/
+          name: provider-price-check
+          path: |
+            data/provider-prices.json
+            data/price-check-report.json
           retention-days: 7

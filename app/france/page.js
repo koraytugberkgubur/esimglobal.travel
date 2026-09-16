@@ -1,3 +1,4 @@
+import { primaryPlan } from "../pricePolicy";
 import FrancePlans, { HeroPlanStrip } from "./FrancePlans";
 import { francePlans } from "./plans";
 import { HeroArrivalBrief, HeroQuickAnswer } from "../CountryHeroContent";
@@ -50,9 +51,9 @@ export default function FrancePage() {
       <section className="franceHero franceDestinationHero" aria-labelledby="france-hero-title" style={{ backgroundImage: `url("${sitePath("/images/france-esim-hero.jpg")}")`, "--hero-position": "center 52%" }}>
         <div className="franceHeroCopy">
           <span className="franceFlag" role="img" aria-label="Flag of France"><i /><i /><i /></span>
-          <p className="routeKicker">FRANCE ESIM COMPARISON / UPDATED <time dateTime="2026-08-12">AUGUST 2026</time></p>
+          <p className="routeKicker">FRANCE ESIM COMPARISON / PACKAGE PRICES CHECKED INDIVIDUALLY</p>
           <h1 id="france-hero-title"><HeadingSignal />Find the best eSIM for France.</h1>
-          <HeroQuickAnswer country="France" plan={francePlans[0]} summary="Compare prepaid France eSIM plans for Paris, Lyon, Nice and travel between regions. Review data, validity, 4G and 5G access, hotspot rules and total price before choosing." reason="The 5 GB allowance is a sensible fit for maps, train bookings and everyday browsing, while 30-day validity covers most holidays without requiring an unlimited plan." />
+          <HeroQuickAnswer country="France" plan={primaryPlan(francePlans)} summary="Compare prepaid France eSIM plans for Paris, Lyon, Nice and travel between regions. Review data, validity, 4G and 5G access, hotspot rules and total price before choosing." />
         </div>
         <figure className="franceVisual">
           <figcaption className="srOnly">The Eiffel Tower illuminated at blue hour in Paris, France</figcaption>
@@ -76,7 +77,7 @@ export default function FrancePage() {
           <div><p className="routeKicker">FRANCE ESIM FAQ</p><h2 id="france-faq-title"><HeadingSignal />Questions before you connect</h2><HeadingReadMore href="#related-destinations" label="More destinations">Check plan choice, setup, calls, hotspot use and regional coverage before purchasing.</HeadingReadMore></div>
           <span>18 practical answers</span>
         </header>
-        <CountryFaqTabs country="France" bestPlan={francePlans[0]} networks="Orange, SFR, Bouygues Telecom and Free Mobile operate nationwide networks." coverage="4G is widely available; 5G depends on location and the selected plan." plans={francePlans} />
+        <CountryFaqTabs country="France" bestPlan={primaryPlan(francePlans)} networks="Orange, SFR, Bouygues Telecom and Free Mobile operate nationwide networks." coverage="4G is widely available; 5G depends on location and the selected plan." plans={francePlans} />
       </section>
       <RelatedCountryGuides currentCountry="France" currentRegion="Europe" />
       </article></main>

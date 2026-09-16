@@ -24,9 +24,9 @@ const criteria = [
     text: "Plan validity may begin at installation, purchase, or first network connection. Select a duration that includes your arrival and departure days, then verify the provider’s activation policy.",
     checks: ["Validity exceeds the trip length", "Activation timing is understood", "A top-up option is available if needed"],
     comparisons: [
-      { brand: "Saily", product: "Short trip", metric: "1 GB / 7 days", detail: "From $4.99", color: "#3626a7" },
-      { brand: "Airalo", product: "Eurolink", metric: "3 GB / 30 days", detail: "From $11.00", color: "#ff6b4a" },
-      { brand: "Holafly", product: "Flexible unlimited", metric: "Unlimited / 7 days", detail: "From $27.50", color: "#7b2dff" },
+      { brand: "Saily", product: "Short trip", metric: "1 GB / 7 days", detail: "Check the destination package", color: "#3626a7" },
+      { brand: "Airalo", product: "Eurolink", metric: "3 GB / 30 days", detail: "Check the regional package", color: "#ff6b4a" },
+      { brand: "Holafly", product: "Flexible unlimited", metric: "Unlimited / 7 days", detail: "Check the selected duration", color: "#7b2dff" },
     ],
     tip: "A 30-day plan can offer better value than stacking several short plans, even for a two-week trip.",
   },
@@ -63,11 +63,11 @@ const criteria = [
     text: "Compare the final price alongside coverage, allowance, validity, network quality, refund terms, and customer support. A slightly higher price can be worthwhile when it removes uncertainty during travel.",
     checks: ["Final price and taxes are visible", "Refund terms are understandable", "The provider offers responsive support"],
     comparisons: [
-      { brand: "Saily", product: "Balanced pick", metric: "3 GB / 30 days", detail: "$12.49 with protection", color: "#3626a7" },
-      { brand: "Airalo", product: "Lowest listed price", metric: "3 GB / 30 days", detail: "$11.00", color: "#ff6b4a" },
-      { brand: "Holafly", product: "Unlimited pick", metric: "Unlimited / 7 days", detail: "$27.50", color: "#7b2dff" },
+      { brand: "Saily", product: "Destination package", metric: "Match GB and validity", detail: "Review the checked country price", color: "#3626a7" },
+      { brand: "Airalo", product: "Destination package", metric: "Use the same currency", detail: "Compare equivalent package totals", color: "#ff6b4a" },
+      { brand: "Holafly", product: "Unlimited package", metric: "Match your trip duration", detail: "Check the full-duration total", color: "#7b2dff" },
     ],
-    tip: "Use the map comparison above to review the balanced pick, lowest price, and unlimited-data option side by side.",
+    tip: "Choose a country on the map, then compare packages with the same allowance, validity and currency.",
   },
 ];
 
