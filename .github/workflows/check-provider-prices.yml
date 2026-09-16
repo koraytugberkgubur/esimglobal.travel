@@ -1,0 +1,29 @@
+name: Check provider prices
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/provider-price-checking]
+    paths:
+      - scripts/collect-provider-pages.mjs
+      - .github/workflows/check-provider-prices.yml
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Collect official product pages
+        run: node scripts/collect-provider-pages.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: provider-price-sources
+          path: price-check/
+          retention-days: 7
