@@ -99,9 +99,9 @@ export default function Home() {
       <main id="main-content">
       <div className="hero">
         <p className="routeKicker">DESTINATION-INDEXED MOBILE DATA</p>
-        <h1><HeadingSignal />Travel data plans, laid out by destination.</h1>
+        <h1 className="heroTitle"><HeadingSignal />Best Global Travel eSIM Plans</h1>
         <HeadingReadMore className="heroLead" href="#compare" label="Open destination index">
-          Global plans suit multi-country itineraries, regional plans suit trips inside one continent, and local plans suit a single destination. See the published allowance, validity and starting price before choosing, with the source kept close to the claim.
+          Global plans suit multi-country itineraries, regional plans suit trips inside one continent, and local plans suit a single destination.
         </HeadingReadMore>
         <WorldMap />
         <EsimGuide />

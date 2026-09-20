@@ -52,7 +52,7 @@ body {
 .brandLogo.inverted .logoType > span { color: #a6d5ca; }
 .brandLogo.inverted .logoType small { color: #8ca7bc; }
 
-.hero { position: relative; align-self: center; width: 100%; max-width: 1180px; padding: 12vh 0; }
+.hero { position: relative; align-self: center; width: 100%; max-width: 1180px; padding: 6vh 0 12vh; }
 .destinationCanvas { isolation: isolate; background:
   radial-gradient(circle at 92% 8%, var(--sunwash), transparent 26rem),
   radial-gradient(circle at 8% 42%, color-mix(in srgb, var(--ocean) 11%, transparent), transparent 31rem),
@@ -72,7 +72,9 @@ body {
 .destinationCanvas .atlasFooter { background: linear-gradient(120deg, var(--ink), color-mix(in srgb, var(--ink) 72%, var(--ocean))); }
 .routeKicker { margin: 0 0 22px; color: var(--ocean); font: 700 11px/1.2 Menlo, Monaco, monospace; letter-spacing: .14em; }
 h1 { max-width: 1050px; margin: 0; font: 400 clamp(56px, 8.2vw, 112px)/.91 "Iowan Old Style", "Palatino Linotype", Palatino, serif; letter-spacing: -.068em; }
-.heroLead { max-width: 800px; margin: 32px 0 0; color: #355c59; font-size: clamp(18px, 2vw, 24px); line-height: 1.5; letter-spacing: -.025em; }
+h1.heroTitle { max-width: none; white-space: nowrap; font-size: clamp(30px, 6.1vw, 78px); letter-spacing: -.06em; }
+@media (max-width: 720px) { h1.heroTitle { white-space: normal; font-size: clamp(34px, 9.4vw, 46px); } }
+.heroLead { max-width: 800px; margin: 22px 0 0; color: #355c59; font-size: clamp(18px, 2vw, 24px); line-height: 1.5; letter-spacing: -.025em; }
 .simTraceMark { display: inline-grid; place-items: center; width: .56em; min-width: 28px; height: .56em; min-height: 28px; margin-right: .16em; color: var(--ocean); vertical-align: .08em; }
 .simTraceMark svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .simTraceFrame { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: bevel; }
@@ -84,14 +86,14 @@ h1 { max-width: 1050px; margin: 0; font: 400 clamp(56px, 8.2vw, 112px)/.91 "Iowa
 .contextThread > a svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.6; transition: transform .18s ease; }
 .contextThread > a:hover svg, .contextThread > a:focus-visible svg { transform: translate(3px, -3px); }
 .contextThread > a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
-.contextThread.heroLead { max-width: 800px; margin: 32px 0 0; color: #355c59; font-size: clamp(18px, 2vw, 24px); line-height: 1.5; letter-spacing: -.025em; }
+.contextThread.heroLead { max-width: 800px; margin: 22px 0 0; color: #355c59; font-size: clamp(18px, 2vw, 24px); line-height: 1.5; letter-spacing: -.025em; }
 .headingMetric { align-self: end; margin-bottom: 6px; color: #78978f; font: 700 8px/1.4 Menlo, Monaco, monospace; letter-spacing: .08em; text-align: right; text-transform: uppercase; }
 .franceHeroCopy .simTraceMark, .bestPickLead .simTraceMark, .heroPlanBoardLabel .simTraceMark, .heroQuickAnswer .simTraceMark, .heroArrivalBrief .simTraceMark { color: #a6d5ca; }
 .franceHeroCopy .contextThread, .bestPickLead .contextThread, .heroPlanBoardLabel .contextThread { color: #bdd6ce; }
 .franceHeroCopy .contextThread > a, .bestPickLead .contextThread > a, .heroPlanBoardLabel .contextThread > a { color: #a6d5ca; }
 .intro { max-width: 620px; margin: 34px 0 0; font-size: clamp(18px, 2.2vw, 25px); line-height: 1.45; letter-spacing: -.025em; }
 
-.destinationFinder { margin-top: 54px; border: 1px solid var(--line); background: rgba(248,252,255,.72); box-shadow: 0 24px 70px rgba(18,59,61,.08); backdrop-filter: blur(12px); }
+.destinationFinder { margin-top: 34px; border: 1px solid var(--line); background: rgba(248,252,255,.72); box-shadow: 0 24px 70px rgba(18,59,61,.08); backdrop-filter: blur(12px); }
 .finderTopline { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding: 24px 26px 20px; }
 .finderStep { margin: 0 0 7px; color: var(--ocean); font: 700 10px/1.2 Menlo, Monaco, monospace; letter-spacing: .13em; text-transform: uppercase; }
 .finderTopline h2 { margin: 0; font: 400 clamp(30px, 4vw, 48px)/1 "Iowan Old Style", "Palatino Linotype", Palatino, serif; letter-spacing: -.045em; }
