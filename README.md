@@ -1,6 +1,6 @@
-# esimglobal.travel
+# travelesim.global
 
-Static-export Next.js launch page for `esimglobal.travel`.
+Static-export Next.js launch page for `travelesim.global`.
 
 ## Local development
 

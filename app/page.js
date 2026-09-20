@@ -16,7 +16,7 @@ const organizationStructuredData = {
       "@type": "Organization",
       "@id": organizationId,
       name: "eSIM Global Travel",
-      alternateName: ["eSIM Global", "esimglobal.travel"],
+      alternateName: ["Travel eSIM Global", "travelesim.global"],
       url: siteUrl("/"),
       description:
         "An independent travel eSIM comparison resource covering providers, data allowances, validity, network access and prices for destinations worldwide.",
