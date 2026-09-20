@@ -39,7 +39,7 @@ and internal navigation. This check also runs before GitHub Pages deployment.
 To reproduce the GitHub Pages build locally:
 
 ```bash
-GITHUB_ACTIONS=true GITHUB_REPOSITORY=KTG1/esimglobal.travel npm run build
+GITHUB_ACTIONS=true GITHUB_REPOSITORY=koraytugberkgubur/esimglobal.travel npm run build
 npm run verify:export
 ```
 

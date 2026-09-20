@@ -47,7 +47,7 @@ const organizationStructuredData = {
       subjectOf: {
         "@type": "SoftwareSourceCode",
         name: "eSIM Global Travel website source",
-        codeRepository: "https://github.com/KTG1/esimglobal.travel",
+        codeRepository: "https://github.com/koraytugberkgubur/esimglobal.travel",
         programmingLanguage: "JavaScript",
       },
     },

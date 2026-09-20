@@ -1,7 +1,8 @@
 const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
 const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] || "esimglobal.travel";
 const basePath = isGitHubPages ? `/${repositoryName}` : "";
-const siteOrigin = isGitHubPages ? `https://ktg1.github.io${basePath}` : "https://esimglobal.travel";
+const repositoryOwner = process.env.GITHUB_REPOSITORY?.split("/")[0] || "koraytugberkgubur";
+const siteOrigin = isGitHubPages ? `https://${repositoryOwner.toLowerCase()}.github.io${basePath}` : "https://esimglobal.travel";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
