@@ -101,7 +101,7 @@ export default function Home() {
         <p className="routeKicker">DESTINATION-INDEXED MOBILE DATA</p>
         <h1><HeadingSignal />Travel data plans, laid out by destination.</h1>
         <HeadingReadMore className="heroLead" href="#compare" label="Open destination index">
-          See the published allowance, validity and starting price before choosing a travel eSIM. Each country guide keeps the source close to the claim.
+          Global plans suit multi-country itineraries, regional plans suit trips inside one continent, and local plans suit a single destination. See the published allowance, validity and starting price before choosing, with the source kept close to the claim.
         </HeadingReadMore>
         <WorldMap />
         <EsimGuide />
@@ -148,20 +148,20 @@ export default function Home() {
               <p className="databaseKicker"><span aria-hidden="true">◎</span> Comparison methodology</p>
               <h2 id="database-title">How the destination index is assembled</h2>
             </div>
-            <p>One consistent view of destination coverage, allowances, validity, network support and price—so every plan can be judged by the same travel-ready criteria.</p>
+            <p>An accurate comparison needs current prices, coverage, data allowances, validity periods, activation rules and plan features in one consistent view—so every plan can be judged by the same travel-ready criteria.</p>
           </header>
           <div className="databaseGrid">
             <article>
               <span className="databaseIndex">Coverage / 01</span>
               <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M6.5 16h19M16 6c3.1 3.1 4.6 6.4 4.6 10S19.1 22.9 16 26c-3.1-3.1-4.6-6.4-4.6-10S12.9 9.1 16 6Z"/></svg>
               <h3>Destination-first coverage</h3>
-              <p>Country and regional plans are organized around where you are traveling, not around provider marketing.</p>
+              <p>Comparison starts with coverage: destination selectors suit single-country trips, regional selectors suit multi-country itineraries, and global plans suit wider international travel.</p>
             </article>
             <article>
               <span className="databaseIndex">Criteria / 02</span>
               <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 8h16M8 16h16M8 24h16"/><circle cx="12" cy="8" r="2.5"/><circle cx="20" cy="16" r="2.5"/><circle cx="15" cy="24" r="2.5"/></svg>
               <h3>Like-for-like plan details</h3>
-              <p>Data, trip length, network generation, delivery and activation details appear in a consistent format.</p>
+              <p>Data, validity, network access, hotspot support, activation and total price appear in a consistent format, so equivalent packages can be compared directly.</p>
             </article>
             <article>
               <span className="databaseIndex">Method / 03</span>
@@ -177,7 +177,7 @@ export default function Home() {
             </article>
           </div>
           <footer className="databaseFooter">
-            <p><strong>Accuracy standard</strong> Provider terms and live checkout prices should always be verified before purchase.</p>
+            <p><strong>Accuracy standard</strong> Provider pricing changes over time, so comparison information is reviewed regularly. Provider terms and live checkout prices should always be verified before purchase.</p>
             <a href="#compare">Explore the database <span aria-hidden="true">⌁</span></a>
           </footer>
         </section>

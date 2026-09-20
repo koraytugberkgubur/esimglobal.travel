@@ -11,63 +11,63 @@ const criteria = [
     text: "The best eSIM is the one that connects to reliable local networks in every country you plan to visit. Check the complete coverage list rather than relying on a broad region name.",
     checks: ["Every destination is included", "Local network partners are listed", "4G or 5G availability is clear"],
     comparisons: [
+      { brand: "Saily", product: "Global", metric: "121 destinations", detail: "Widest listed worldwide coverage", color: "#3626a7" },
       { brand: "Airalo", product: "Eurolink", metric: "42 countries", detail: "Broadest listed Europe coverage", color: "#ff6b4a" },
-      { brand: "Saily", product: "Europe", metric: "35 countries", detail: "Coverage plus security tools", color: "#3626a7" },
       { brand: "Holafly", product: "Europe Unlimited", metric: "33 countries", detail: "Multi-country unlimited data", color: "#7b2dff" },
     ],
-    tip: "For a multi-country trip, one regional eSIM is usually easier than installing separate country plans.",
+    tip: "For a multi-country trip, one regional or global eSIM is usually easier than installing separate country plans. Tiered global, regional and local options make it simpler to match coverage to your route.",
   },
   {
     label: "Match the trip length",
     short: "Validity and activation",
-    title: "Choose validity that covers the entire journey.",
-    text: "Plan validity may begin at installation, purchase, or first network connection. Select a duration that includes your arrival and departure days, then verify the provider’s activation policy.",
-    checks: ["Validity exceeds the trip length", "Activation timing is understood", "A top-up option is available if needed"],
+    title: "Line up plan validity with your complete itinerary.",
+    text: "Short plans suit brief holidays, while longer validity reduces repeated purchases during extended travel. Buying one plan that spans the whole trip is simpler than stacking several short ones.",
+    checks: ["Validity periods range from 7 to 365 days", "Longer plans reduce repeat purchases", "Activation can be timed to your arrival date"],
     comparisons: [
-      { brand: "Saily", product: "Short trip", metric: "1 GB / 7 days", detail: "Check the destination package", color: "#3626a7" },
-      { brand: "Airalo", product: "Eurolink", metric: "3 GB / 30 days", detail: "Check the regional package", color: "#ff6b4a" },
+      { brand: "Saily", product: "Global short trip", metric: "1 GB / 7 days", detail: "Sized for a brief holiday", color: "#3626a7" },
+      { brand: "Saily", product: "Global long stay", metric: "50 GB / 365 days", detail: "Built for frequent travelers", color: "#3626a7" },
       { brand: "Holafly", product: "Flexible unlimited", metric: "Unlimited / 7 days", detail: "Check the selected duration", color: "#7b2dff" },
     ],
-    tip: "A 30-day plan can offer better value than stacking several short plans, even for a two-week trip.",
+    tip: "A 30-day plan can offer better value than stacking several short plans, even for a two-week trip. A range from 7 to 365 days covers nearly every itinerary length.",
   },
   {
     label: "Estimate your data",
     short: "GB, unlimited and speed",
-    title: "Pay for the data you will realistically use.",
-    text: "Light navigation and messaging use far less data than video, tethering, or remote work. Compare fixed-data plans by price per gigabyte and read the fair-use policy behind unlimited plans.",
-    checks: ["Allowance fits your usage", "Unlimited speed limits are disclosed", "Usage tracking is available"],
+    title: "Match your allowance to how you will actually use your phone.",
+    text: "Navigation and messaging require far less data than streaming, video calls, and hotspot use. Estimating daily consumption before buying prevents both overpaying and running out mid-trip.",
+    checks: ["1–3 GB suits light, message-first use", "5–10 GB suits regular navigation and social media", "20 GB or unlimited suits streaming and hotspot use"],
     comparisons: [
-      { brand: "Airalo", product: "Eurolink", metric: "5 GB / 30 days", detail: "Fixed-data option", color: "#ff6b4a" },
-      { brand: "Saily", product: "Europe", metric: "10 GB / 30 days", detail: "For regular daily use", color: "#3626a7" },
-      { brand: "Holafly", product: "Europe Unlimited", metric: "Unlimited / 7 days", detail: "For heavy data use", color: "#7b2dff" },
+      { brand: "Saily", product: "Global light", metric: "1–3 GB", detail: "Messaging and maps", color: "#3626a7" },
+      { brand: "Saily", product: "Global regular", metric: "5–10 GB", detail: "Daily navigation and social", color: "#3626a7" },
+      { brand: "Holafly", product: "Europe Unlimited", metric: "Unlimited / 7 days", detail: "Streaming and hotspot use", color: "#7b2dff" },
     ],
-    tip: "Most travelers use 3–5 GB per week; video calls and hotspot use can increase that quickly.",
+    tip: "Most travelers use 3–5 GB per week; video calls and hotspot use can increase that quickly, so it is worth sizing up if in doubt.",
   },
   {
     label: "Check plan features",
-    short: "Hotspot, calls and security",
-    title: "Look beyond the headline data allowance.",
-    text: "Travel eSIMs are often data-only. If you need hotspot sharing, calls, SMS, a local number, privacy tools, or top-ups, confirm that the selected product includes them before checkout.",
-    checks: ["Hotspot rules suit your devices", "Calls and SMS needs are covered", "Installation support is available"],
+    short: "Hotspot, support and security",
+    title: "Look past the price tag to what the plan actually includes.",
+    text: "Connectivity requirements go beyond raw data, including hotspot access, activation rules, support, and security tools, all of which affect how usable a plan is in practice. These features often separate a good plan from a merely cheap one.",
+    checks: ["Hotspot sharing is confirmed where needed", "Activation happens digitally before departure", "Support and security tools are included"],
     comparisons: [
-      { brand: "Saily", product: "Europe", metric: "Web protection", detail: "Security-focused choice", color: "#3626a7" },
+      { brand: "Saily", product: "Global", metric: "Web protection", detail: "Ad blocking and virtual location", color: "#3626a7" },
+      { brand: "Saily", product: "Global", metric: "24-hour support", detail: "Included on most plans", color: "#3626a7" },
       { brand: "Airalo", product: "Eurolink", metric: "Top-ups", detail: "Extend data when needed", color: "#ff6b4a" },
-      { brand: "Holafly", product: "Europe Unlimited", metric: "Daily hotspot", detail: "Check sharing allowance", color: "#7b2dff" },
     ],
     tip: "Keep your primary SIM active for verification texts, but disable its data roaming to avoid extra charges.",
   },
   {
     label: "Compare total value",
-    short: "Price, support and trust",
-    title: "The cheapest plan is not always the best-value eSIM.",
-    text: "Compare the final price alongside coverage, allowance, validity, network quality, refund terms, and customer support. A slightly higher price can be worthwhile when it removes uncertainty during travel.",
-    checks: ["Final price and taxes are visible", "Refund terms are understandable", "The provider offers responsive support"],
+    short: "Value, not headline price",
+    title: "Judge plans by total value, not headline price.",
+    text: "Data allowance, validity, coverage, and included features all determine the practical cost of a plan. The lowest sticker price is not always the best deal once these factors are weighed together.",
+    checks: ["Price per GB reveals the real cost", "Daily cost makes short trips easy to compare", "Coverage value rises for multi-country routes"],
     comparisons: [
       { brand: "Saily", product: "Destination package", metric: "Match GB and validity", detail: "Review the checked country price", color: "#3626a7" },
       { brand: "Airalo", product: "Destination package", metric: "Use the same currency", detail: "Compare equivalent package totals", color: "#ff6b4a" },
       { brand: "Holafly", product: "Unlimited package", metric: "Match your trip duration", detail: "Check the full-duration total", color: "#7b2dff" },
     ],
-    tip: "Choose a country on the map, then compare packages with the same allowance, validity and currency.",
+    tip: "Use the coverage, length and data checks above alongside this value check to land on the plan that fits your actual trip, not just the lowest number on the page.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function EsimGuide() {
         <div>
           <p className="routeKicker">TRAVEL ESIM BUYER’S GUIDE</p>
           <h2 id="guide-title"><HeadingSignal />How to choose the best eSIM for your trip</h2>
-          <HeadingReadMore href="#guide-checks" label="Start the checks">Use five practical checks to separate a low headline price from a plan that will actually keep you connected.</HeadingReadMore>
+          <HeadingReadMore href="#guide-checks" label="Start the checks">The best eSIM depends on destination coverage, trip length, data consumption, plan features and total value. Coverage comes first, because an inexpensive plan has limited value outside its supported network.</HeadingReadMore>
         </div>
         <span className="headingMetric">05 decision checks · side-by-side examples</span>
       </header>
