@@ -1,5 +1,6 @@
 import { destinationRegistry } from "./countryRegistry";
 import { buildProviderPlanCatalog } from "./providerPlanCatalog";
+import { rotatePlanOrder } from "./providerOrder";
 
 const images = { Europe: "/images/france-esim-hero.jpg", Asia: "/images/japan-esim-hero.jpg", Africa: "/images/spain-esim-hero.jpg", "North America": "/images/united-states-esim-hero.jpg", "South America": "/images/spain-esim-hero.jpg", Oceania: "/images/japan-esim-hero.jpg" };
 
@@ -22,7 +23,7 @@ export const countryPages = Object.fromEntries(destinations.map(([slug,name,flag
 
   networks: `Saily connects through local partner networks in ${name}; the specific carrier can vary by plan and location.`,
   coverage: "Saily states that speed may be 3G, 4G, LTE or 5G depending on the local provider, device and location.",
-  plans: buildProviderPlanCatalog(name, slug),
+  plans: rotatePlanOrder(buildProviderPlanCatalog(name, slug), slug),
 }]));
 
 // Newly indexed destinations have planning guides, not invented commercial offers.
